@@ -1,5 +1,5 @@
 .logotipo{
-    width: 90px;
+    width: 70px;
 }
 .logotipo:hover{
     -webkit-transform:scale(1.3);transform:scale(1.3);
@@ -9,8 +9,17 @@
 }
 .footer{
     background-color:rgb(82, 99, 52) ;
+    position:relative;
+    width: 100%;
 }
 .redesSociales{
     width: 20px;
     
+}
+
+/** Para que el footer se mantenga fijado al final de la página en tablets y móviles*/
+@media screen and (min-width: 300px) and (max-width: 1200px){
+    .footer {
+        position:absolute;
+    }
 }
