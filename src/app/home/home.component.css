@@ -1,4 +1,4 @@
-img{
+#fotoportada{
     padding-top: 100px;
     width: 600px;
 }
@@ -16,6 +16,13 @@ img{
 a{
     text-decoration: none;
     color: black;
+}
+.imgCarrusel{
+    width: 15%;
+}
+#carrusel{
+    width: 50%;
+    margin: auto;
 }
 
 @media screen and (min-width: 300px) and (max-width: 1200px){
