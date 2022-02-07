@@ -1,7 +1,22 @@
-#fotoportada{
-    padding-top: 100px;
-    width: 600px;
+@font-face {
+    font-family: cocogose;
+    src: url(../../assets/fuentes/cocogose.ttf);
+  }
+
+h1, p{
+    font-family: cocogose;
+    border: 1px red solid;
+    margin:auto;
 }
+
+div{
+    border: 1px red solid;
+}
+
+#nombreclinica{
+    padding-top: 100px;
+}
+
 .contenedor-img{
     text-align: center;
 }
@@ -9,7 +24,6 @@
     width: 100px;
 }
 .enlaces{
-    width: 100%;
     padding-bottom: 100px;
     text-align: center;
 }
@@ -20,10 +34,15 @@ a{
 .imgCarrusel{
     width: 15%;
 }
+.imglogo{
+    width: 65%;
+    text-align:right;
+}
 #carrusel{
     width: 50%;
     margin: auto;
 }
+
 
 @media screen and (min-width: 300px) and (max-width: 1200px){
     .enlacesLogo{
