@@ -5,16 +5,15 @@
     -webkit-transform:scale(1.3);transform:scale(1.3);
 }
 .navbar{
-    background-color:rgb(145, 170, 103);
+    background-color: #9CA07E;
 }
 .footer{
-    background-color:rgb(82, 99, 52) ;
+    background-color:#9CA07E;
     position:relative;
     width: 100%;
 }
 .redesSociales{
     width: 20px;
-    
 }
 
 /** Para que el footer se mantenga fijado al final de la página en tablets y móviles*/

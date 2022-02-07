@@ -5,13 +5,19 @@
 
 h1, p{
     font-family: cocogose;
-    border: 1px red solid;
     margin:auto;
 }
 
-div{
-    border: 1px red solid;
+.iniciopagina{
+    background-color: #D3B094;
 }
+
+/**
+div{
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+}*/
 
 #nombreclinica{
     padding-top: 100px;
@@ -24,22 +30,21 @@ div{
     width: 100px;
 }
 .enlaces{
-    padding-bottom: 100px;
+    padding-top: 50px;
+    padding-bottom: 70px;
     text-align: center;
 }
 a{
     text-decoration: none;
     color: black;
 }
-.imgCarrusel{
-    width: 15%;
-}
+
 .imglogo{
     width: 65%;
     text-align:right;
 }
 #carrusel{
-    width: 50%;
+    width: 40%;
     margin: auto;
 }
 
@@ -47,5 +52,13 @@ a{
 @media screen and (min-width: 300px) and (max-width: 1200px){
     .enlacesLogo{
         width: 100px;
+    }
+    #nombreclinica{
+        padding-top: 1px;
+        padding-bottom: 20px;
+    }
+    .imglogo{
+        width: 40%;
+        text-align:right;
     }
 }

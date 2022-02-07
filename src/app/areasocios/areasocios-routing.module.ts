@@ -1,12 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
+import { MisdatosComponent } from './misdatos/misdatos.component';
 
 const routes: Routes = [
   {
-    path:"", component: LoginComponent, pathMatch: "full"
-  }
-];
+    path:'', component: LoginComponent
+    //Hay que quitar el path full, porque no nos mostraria bien el resto de páginas
+     
+  }, 
+  //Misdatos no puede ser un hijo de areasocios, porque cuando intentamos mostrar el contenido
+  //en el navegador sustituyendonos la pagina de login por la del area de socios, el app-routing
+  //no sabe a quien llamar, porque si lo pusieramos como un hijo, no nos sustituiría el login,
+  //lo que haría sería añadirlo dentro del propio componente donde se está mostrando el login 
+  {  path:'misdatos', component: MisdatosComponent 
+}];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)]
