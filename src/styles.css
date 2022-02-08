@@ -1,3 +1,11 @@
 body{
     background-color: rgb(209, 216, 198);
 }
+@font-face {
+    font-family: cocogose;
+    src: url(../src/assets/fuentes/cocogose.ttf);
+  }
+
+h1, p, h2{
+    font-family: cocogose;
+}

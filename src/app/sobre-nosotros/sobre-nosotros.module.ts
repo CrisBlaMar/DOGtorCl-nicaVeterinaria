@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NosotrosComponent } from './nosotros/nosotros.component';
 import { SobreNosotrosRoutingModule } from './sobreNosotros-routing.module';
+import { SobreNosotrosComponent } from './sobre-nosotros.component';
 
 
 
 @NgModule({
   declarations: [
-    NosotrosComponent
+    SobreNosotrosComponent
   ],
   imports: [
     CommonModule,

@@ -1,11 +1,16 @@
 .formulariologin{
     width: 60%;
-    padding-top: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 100px;
     padding-bottom: 100px;
     text-align: center;
-    background-color: #D3B094;
+   /** background-color: #D3B094;*/
     border-radius: 20px;
     color: white;
+    background-image: url("../../../assets/img/gatorecorte.jpeg");
+    background-size: cover;
+
 }
 input{
     border-top: none;
@@ -13,10 +18,13 @@ input{
     border-left: none;
 }
 button{
-    background-color: #9CA07E;
-    border-color: #9CA07E;
+    background-color: #c98c47;
+    border-color: #c98c47;
 }
 button:hover{
-    background-color: #71754d;
-    border-color: #71754d;
+    background-color: #925c1f;
+    border-color: #925c1f;
+}
+#logintexto{
+    background-color: rgba(224, 181, 125, 0.397) ;
 }

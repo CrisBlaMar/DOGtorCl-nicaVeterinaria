@@ -1,0 +1,22 @@
+h1{
+    background-color: #D3B094;
+}
+#imagenes{
+    width: 60%;
+}
+#mapa{
+    width: 70%;
+    margin: auto;
+}
+.imagenNosotros{
+    text-align: center;
+}
+.sobredogtor{
+    background-color: #D3B094;
+}
+/**
+div {
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+}*/

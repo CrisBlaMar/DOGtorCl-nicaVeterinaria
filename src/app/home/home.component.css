@@ -1,26 +1,18 @@
-@font-face {
-    font-family: cocogose;
-    src: url(../../assets/fuentes/cocogose.ttf);
-  }
 
 h1, p{
-    font-family: cocogose;
     margin:auto;
 }
 
 .iniciopagina{
-    background-color: #D3B094;
+    background-color: #78755F;
 }
-
-/**
-div{
-    border-width: 1px;
-    border-style: solid;
-    border-color: black;
-}*/
 
 #nombreclinica{
     padding-top: 100px;
+    font-size: 80px;
+}
+#tuclinica{
+    font-size: 25px;
 }
 
 .contenedor-img{
@@ -40,25 +32,44 @@ a{
 }
 
 .imglogo{
-    width: 65%;
+    width: 100%;
     text-align:right;
 }
+
 #carrusel{
     width: 40%;
     margin: auto;
 }
 
-
-@media screen and (min-width: 300px) and (max-width: 1200px){
+@media screen and (min-width: 700px) and (max-width: 1200px){
     .enlacesLogo{
         width: 100px;
     }
     #nombreclinica{
-        padding-top: 1px;
+        padding-top: 2px;
         padding-bottom: 20px;
+        font-size: 50px;
     }
     .imglogo{
-        width: 40%;
+        width: 60%;
         text-align:right;
     }
 }
+
+@media screen and (min-width: 300px) and (max-width: 698px){
+    .enlacesLogo{
+        width: 60px;
+        margin-top: 30px;
+    }
+    .textoenlaces{
+        font-size: 13px;
+    }
+    #carrusel{
+        width: 70%;
+        margin: auto;
+    }
+    .enlaces{
+        padding-top: 1px;
+    }
+}
+

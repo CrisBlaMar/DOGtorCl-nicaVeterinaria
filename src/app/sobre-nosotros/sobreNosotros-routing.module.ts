@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NosotrosComponent } from './nosotros/nosotros.component';
+import { SobreNosotrosComponent } from './sobre-nosotros.component';
+
 
 const routes: Routes = [
   {
-    path:"", component: NosotrosComponent, pathMatch: "full"
+    path:"", component: SobreNosotrosComponent, pathMatch: "full"
   }
 ];
 
