@@ -11,25 +11,23 @@ import Swal from 'sweetalert2';
 })
 export class LoginComponent implements OnInit {
   
-  email !: string;
-  password !: string;
-
+  email : string = '';
+  contrasenia : string = '';
+  mostrar: boolean =false;
   constructor(private usuarioservice : UsuarioService,
     private router : Router) { }
 
 
   login() {
-    this.usuarioservice.login( this.email, this.password )
+    this.usuarioservice.login( this.email, this.contrasenia )
     .subscribe({
         next: (resp => {
           localStorage.setItem('token',resp.access_token!)
-          this.router.navigateByUrl('/areasocios/misdatos') //hay que poner la ruta completa
-          //ya que misdatos está dentro de areasocios y solo se puede acceder a través de esa url
+          this.router.navigateByUrl('/areasocios/opciones') 
       }),
         error: resp => {
           console.log(resp);
-          
-          /**Swal.fire('Error', resp.error.message, 'error')*/
+          this.mostrar= true;
           Swal.fire({
             title: '¡ERROR!',
             text: 'El email o la contraseña son inválidos',

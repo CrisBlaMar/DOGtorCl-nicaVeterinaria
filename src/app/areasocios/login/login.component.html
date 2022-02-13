@@ -1,10 +1,15 @@
+
+
 <div class="formulariologin container">
-    <h1 id="logintexto"><strong>L O G I N</strong></h1>
-    <p>Accede con tus datos de resgitro</p>
+    <h1 id="logintexto"><strong>Iniciar Sesión</strong></h1>
+    <p>Accede con tus datos de registro</p>
     <form class="login" (ngSubmit)="login()">
-        <input  type="email" [(ngModel)]="email" name="email" id="email" placeholder="Email..."><br>
-        <input class="mt-3" type="password" [(ngModel)]="password" name="contrasenia" id="contrasenia" 
+        <input class="form-control" type="email" [(ngModel)]="email" name="email" id="email" placeholder="Email..."><br>
+        <input class="mt-3 form-control" type="password" [(ngModel)]="contrasenia" name="contrasenia" id="contrasenia" 
         placeholder="Contraseña..."><br>
-        <button class="mt-3 btn text-white" type="submit">ACCEDER</button>
+        <div class="wrap">
+            <button class="button">Submit</button>
+          </div>
     </form>
 </div>
+

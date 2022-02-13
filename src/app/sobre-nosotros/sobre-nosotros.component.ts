@@ -9,7 +9,10 @@ export class SobreNosotrosComponent implements OnInit {
 
   constructor() { }
 
+  mostrar: boolean = false;
+
   ngOnInit(): void {
+    this.mostrar=true;
   }
 
 }

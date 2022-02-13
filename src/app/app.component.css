@@ -1,11 +1,11 @@
 .logotipo{
-    width: 150px;
+    width: 70px;
 }
 .logotipo:hover{
     -webkit-transform:scale(1.3);transform:scale(1.3);
 }
 .navbar{
-    background-color: #9CA07E;
+    background-color: #78755F;
 }
 .footer{
     background-color:#9CA07E;

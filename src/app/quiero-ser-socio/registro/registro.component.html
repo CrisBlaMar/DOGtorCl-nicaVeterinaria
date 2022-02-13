@@ -1,27 +1,19 @@
 <div class="formulariologin container">
-    <h1 id="logintexto"><strong>R E G I S T R O</strong></h1>
+    <h1 id="logintexto"><strong>Registro</strong></h1>
     <p>¿Quiéres formar parte de nuestra manada?</p>
     <p>¡Únete!</p>
-    <form class="login row">
+    <form [formGroup]="miFormulario" (ngSubmit)="hacerRegistro()" class="login row">
         <div class="col-lg-6">
-            <input  type="email"name="email" id="email" 
-            placeholder="Email..."><br>
-            <input class="mt-3" type="password" name="contrasenia" id="contrasenia" 
-            placeholder="Contraseña..."><br>
-            <input class="mt-3" type="text" name="nombre" id="contrasenia" 
-            placeholder="Nombre..."><br>
-            <input class="mt-3" type="text" name="apellido" id="contrasenia" 
-            placeholder="Apellidos..."><br>
+            <input type="email" class="form-control" formControlName="email" placeholder="Email..." required><br>
+            <input class="mt-3" type="password" class="form-control" formControlName="contrasenia" placeholder="Contraseña..." required><br>
+            <input class="mt-3" type="text" class="form-control" formControlName="nombre" placeholder="Nombre..." required><br>
+            <input class="mt-3" type="text" class="form-control" formControlName="apellidos" placeholder="Apellidos..." required><br>
         </div>
         <div class="col-lg-6">
-            <input  type="text" name="dni" id="contrasenia" 
-            placeholder="DNI..."><br>
-            <input class="mt-3" type="text" name="telefono" id="contrasenia" 
-            placeholder="Teléfono..."><br>
-            <input class="mt-3" type="text" name="direcion" id="contrasenia" 
-            placeholder="Dirección..."><br>
-            <input class="mt-3" type="text" name="cuenta" id="contrasenia" 
-            placeholder="Cuenta bancaría..."><br>
+            <input  type="text" class="form-control" formControlName="dni" placeholder="DNI..." required><br>
+            <input class="mt-3" type="text" class="form-control" formControlName="telefono" placeholder="Teléfono..." required><br>
+            <input class="mt-3" type="text" class="form-control" formControlName="direccion" placeholder="Dirección..." required><br>
+            <input class="mt-3" type="text" class="form-control" formControlName="cuenta_bancaria" placeholder="Cuenta bancaría..." required><br>
             <button class="mt-3 btn text-white text-center" type="submit">REGÍSTRAME</button>
         </div>
         

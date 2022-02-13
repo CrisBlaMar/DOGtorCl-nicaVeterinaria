@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
-import { MisdatosComponent } from './misdatos/misdatos.component';
+import { OpcionesComponent } from './opciones/opciones.component';
+import { Guard } from './guard.service';
+import { RegistromascotaComponent } from './registromascota/registromascota.component';
 
 const routes: Routes = [
   {
@@ -13,8 +15,13 @@ const routes: Routes = [
   //en el navegador sustituyendonos la pagina de login por la del area de socios, el app-routing
   //no sabe a quien llamar, porque si lo pusieramos como un hijo, no nos sustituiría el login,
   //lo que haría sería añadirlo dentro del propio componente donde se está mostrando el login 
-  {  path:'misdatos', component: MisdatosComponent 
-}];
+  {  path:'opciones', component: OpcionesComponent, canActivate: [Guard]},
+  
+  { path: 'registromascota', component: RegistromascotaComponent}
+
+
+
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)]

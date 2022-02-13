@@ -6,6 +6,9 @@ body{
     src: url(../src/assets/fuentes/cocogose.ttf);
   }
 
-h1, p, h2{
+h1, h2{
     font-family: cocogose;
+}
+p, li{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }

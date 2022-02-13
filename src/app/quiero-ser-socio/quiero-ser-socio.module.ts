@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RegistroComponent } from './registro/registro.component';
 import { QuieroSerSocioRoutingModule } from './quieroSerSocio-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -11,7 +12,8 @@ import { QuieroSerSocioRoutingModule } from './quieroSerSocio-routing.module';
   ],
   imports: [
     CommonModule,
-    QuieroSerSocioRoutingModule
+    QuieroSerSocioRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class QuieroSerSocioModule { }
