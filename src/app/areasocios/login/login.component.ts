@@ -28,11 +28,12 @@ export class LoginComponent implements OnInit {
         error: resp => {
           console.log(resp);
           this.mostrar= true;
-          Swal.fire({
+          /**Swal.fire({
             title: '¡ERROR!',
             text: 'El email o la contraseña son inválidos',
             icon: 'error'
-          })
+          })*/
+          Swal.fire('Error', resp.error.message, 'error')
           
         }
     });

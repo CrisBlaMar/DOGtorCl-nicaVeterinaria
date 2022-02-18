@@ -15,15 +15,15 @@ const routes: Routes = [
   //en el navegador sustituyendonos la pagina de login por la del area de socios, el app-routing
   //no sabe a quien llamar, porque si lo pusieramos como un hijo, no nos sustituiría el login,
   //lo que haría sería añadirlo dentro del propio componente donde se está mostrando el login 
-  {  path:'opciones', component: OpcionesComponent, canActivate: [Guard]},
-  
-  { path: 'registromascota', component: RegistromascotaComponent}
+{ path:'opciones', component: OpcionesComponent, canActivate: [Guard]},
+{ path:'registromascota', component: RegistromascotaComponent, canActivate: [Guard]}
 
 
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)]
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
 })
 export class AreaSociosRoutingModule { }

@@ -4,9 +4,6 @@
 .logotipo:hover{
     -webkit-transform:scale(1.3);transform:scale(1.3);
 }
-.navbar{
-    background-color: #78755F;
-}
 .footer{
     background-color:#9CA07E;
     position:relative;
@@ -15,14 +12,36 @@
 .redesSociales{
     width: 20px;
 }
-.enlace {
+
+
+.enlace::before {  
+    transform: scaleX(0);
+    transform-origin: bottom right;
+  }
+  
+  .enlace:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+  .enlace::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    inset: 0 0 0 0;
+    background: #B9753E;
+    z-index: -1;
+    transition: transform .3s ease;
+  }
+  
+  .enlace {
+    position: relative;
     color: white;
     text-decoration: none;
+    font-size: 20px;
     margin: 30px;
   }
-.enlace:hover {
-    color: brown;
-}
 
 
 /** Para que el footer se mantenga fijado al final de la página en tablets y móviles*/

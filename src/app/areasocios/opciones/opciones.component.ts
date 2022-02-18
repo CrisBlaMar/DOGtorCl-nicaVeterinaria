@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Injectable } from "@angular/core";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-misdatos',
@@ -9,6 +10,11 @@ import { Injectable } from "@angular/core";
 
 
 export class OpcionesComponent implements OnInit {
+
+
+  cerrarSesion(){
+    localStorage.clear();
+  }
 
   constructor() { }
 

@@ -3,4 +3,16 @@ img{
 }
 .enlaces{
     margin: auto;
+    text-decoration: none;
+}
+.enlaces:visited{
+    color: black;
+}
+@font-face {
+    font-family: cocogose;
+    src: url(../../../assets/fuentes/cocogose.ttf);
+  }
+
+p{
+    font-family: cocogose;
 }

@@ -1,16 +1,16 @@
+
 <div class="formulariologin container">
     <h1 id="logintexto"><strong>Registra a tu mascota</strong></h1>
-    <p>¿Quiéres formar parte de nuestra manada?</p>
-    <p>¡Únete!</p>
-    <form [formGroup]="miMascota"  class="login row">
+    <p>¿Quiéres que tu mejor amigo forme parte de nuestra manada?</p>
+    <p>¡Regístralo!</p>
+    <form [formGroup]="miMascota" (ngSubmit)="hacerRegistro()" class="login row">
         <div class="col-lg-12">
             <input type="email" class="form-control" formControlName="nombre" placeholder="Nombre..." required><br>
-            <input class="mt-3" type="password" class="form-control" formControlName="pelaje" placeholder="Pelaje..." required><br>
+            <input class="mt-3" type="text" class="form-control" formControlName="pelaje" placeholder="Pelaje..." required><br>
             <input class="mt-3" type="text" class="form-control" formControlName="raza" placeholder="Raza..." required><br>
             <input class="mt-3" type="text" class="form-control" formControlName="especie" placeholder="Especie..." required><br>
             <input class="mt-3" type="text" class="form-control" formControlName="sexo" placeholder="Sexo..." required><br>
-            <button class="mt-3 btn text-white text-center" type="submit">REGÍSTRAME</button>
+            <button class="mt-3 btn text-white text-center" type="submit">AÑADIR MI MASCOTA</button>
         </div>
-        
     </form>
 </div>

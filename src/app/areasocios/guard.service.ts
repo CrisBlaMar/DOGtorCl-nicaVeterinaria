@@ -24,7 +24,7 @@ export class Guard implements CanActivate{
                 console.log(err);
                 Swal.fire({
                     title: '¡ERROR!',
-                    text: 'No puede acceder. El token ha expirado',
+                    text: 'No puede acceder. La sesión ha expirado',
                     icon: 'error'
                   });
                 this.router.navigateByUrl('/areasocios');
