@@ -3,8 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UsuarioService } from '../../areasocios/usuarios-services/usuario.service';
 import { Usuario } from '../../interfaces/usuario.interfaces';
 import Swal from 'sweetalert2';
-import { ValidacionesService } from '../../areasocios/usuarios-services/validaciones.service';
-import { EmailValidatorService } from '../../areasocios/usuarios-services/emailValidcion.service';
 
 @Component({
   selector: 'app-registro',
@@ -14,36 +12,16 @@ import { EmailValidatorService } from '../../areasocios/usuarios-services/emailV
 export class RegistroComponent implements OnInit {
 
   constructor(private usuarioservice : UsuarioService,
-    private form : FormBuilder,
-    private validacionesservice : ValidacionesService,
-    private validacionemail : EmailValidatorService) { }
+    private form : FormBuilder) { }
 
   miFormulario: FormGroup = this.form.group({
-    nombre: [['', [ Validators.required, Validators.pattern( this.validacionesservice.patronNombre ) ] ]],
-    apellidos: [['', [ Validators.required, Validators.pattern( this.validacionesservice.patronApellidos ) ] ]],
-    email: [['', [ Validators.required, Validators.pattern( this.validacionesservice.patronEmail ) ]], [ this.validacionemail ]],
-    contrasenia: [['', [ Validators.required, Validators.pattern( this.validacionesservice.patronContrasenia ) ] ]],
-    telefono: [['', [ Validators.required, Validators.pattern( this.validacionesservice.patronTelefono ) ] ]],
-    dni: [['', [ Validators.required, Validators.pattern( this.validacionesservice.patronDni ) ] ]]
+    nombre: ['',[Validators.required, Validators.pattern('^[A-Za-z ]+$')]],
+    apellidos: ['', [ Validators.required, Validators.pattern('([a-zA-Z]+) ([a-zA-Z]+)')]],
+    email: ['', [ Validators.required, Validators.pattern('^[^@]+@[^@]+\.[a-zA-Z]{2,}$')]],
+    contrasenia: ['', [ Validators.required, Validators.minLength(6), Validators.maxLength(8)]],
+    telefono: ['', [ Validators.required, Validators.pattern('^[0-9,$]*$') ] ],
+    dni:['', [ Validators.required, Validators.pattern('[0-9]{8}[A-Za-z]{1}') ]]
   })
-
-  noValido( campo: string ) {
-    return this.miFormulario.get(campo)?.invalid && this.miFormulario.get(campo)?.touched;
-  }
-
-  get emailerror(): string {   
-    const errors = this.miFormulario.get('email')?.errors!;
-    if ( errors['required'] ) {
-      return 'Debe introducir un email';
-    } else if ( errors['pattern'] ) { //si no concuerda con el patrón del validator.service
-      return 'El email debe tener un formato válido';
-    } else if ( errors['email'] ) { //si ya existe ese email (email-validator)
-      return 'El email ya está registrado, pruebe con otro';
-    }
-
-    return '';
-  }
-
 
   hacerRegistro (){
     let usuario : Usuario = this.miFormulario.value;

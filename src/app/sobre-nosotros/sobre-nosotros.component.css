@@ -20,13 +20,29 @@ p, i{
 
 .card{
     text-align: center;
-    background-color: #78755F;
+    margin: auto;
+    background-color: #798368;
     color: white;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 4px;
+    border-radius: 70px;
 
+}
+.card:hover{
+    border-color: #D3B094;
+    border-width: 5px;
+}
+.card-img-top{
+    width: 100%;
+    border-radius: 70px;
+    border-bottom-left-radius: 0px;
 }
 a{
     border-color: #D6B094;
+    border-radius: 50px;
 }
 #trabajo{
     font-size: 15px;
+    font-style: normal;
 }

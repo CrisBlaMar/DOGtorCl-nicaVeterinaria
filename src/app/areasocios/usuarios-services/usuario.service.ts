@@ -26,13 +26,6 @@ export class UsuarioService {
     //poner también en el registrer
   }
 
-  loginObteniendoUsuario(){
-    const url = `${this.baseUrl}/user`;
-    let token = JSON.parse(<string>localStorage.getItem('token'));
-    const headers = new HttpHeaders()
-      .set('Authorization', `Bearer ${token}`);
-    return this.httpclient.get<AuthResponse>(url, {headers});
-  }
   
 
   validarToken() : Observable<AuthResponse>{
@@ -53,8 +46,10 @@ export class UsuarioService {
   registroMascota (mascota : Mascota, email : string){
     const url = `${this.baseUrl}/user/${email}/mascota`;
     const body =  mascota;
-    const opcionHeader = new HttpHeaders();
-    opcionHeader.append('Access-Control-Allow-Origin','*');
+    let token = localStorage.getItem('token');
+    const opcionHeader = new HttpHeaders()
+    .set('Authorization', `Bearer ${token}`);
+
     return this.httpclient.post<AuthResponse>(url, body, {headers:opcionHeader});
   }
 
@@ -62,6 +57,19 @@ export class UsuarioService {
     const url = `${this.baseUrl}/user/${email}`;
     return this.httpclient.get<Usuario>(url);
   }
+
+
+
+
+  getEmail(){
+    const url = `${this.baseUrl}/user`;
+    let token = localStorage.getItem("token")
+    const opcionHeader = new HttpHeaders()
+    .set('Authorization', `Bearer ${token}`);
+    return this.httpclient.get<string>(url, {headers : opcionHeader});
+  }
+  
+
   
 
 }

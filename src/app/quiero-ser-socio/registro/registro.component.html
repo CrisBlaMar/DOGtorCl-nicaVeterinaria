@@ -5,54 +5,37 @@
     <form [formGroup]="miFormulario" (ngSubmit)="hacerRegistro()" >
         <div class="col-lg-12">
             <div class="form-floating mt-2">
-                <input class="form-control" id="email" type="text" formControlName="email">
-                <span class="form-text text-danger"
-                  *ngIf="noValido('email')">
-                  El email no es correcto
-                </span>
-                <label for="email" class="text-dark">Email</label>
+                <input class="form-control" id="email2" type="text" formControlName="email">
+                <label for="email2" class="text-dark">Email</label>
+                <span class="form-text text-danger" *ngIf="miFormulario.controls['email'].errors && miFormulario.controls['email'].touched">El email no tiene el formato correcto: correo@gmail.com</span>
+                
             </div>
             <div class="form-floating mt-2">
                 <input class="form-control" id="contrasenia" formControlName="contrasenia" type="password">
-                <span class="form-text text-danger"
-                  *ngIf="noValido('contrasenia')">
-                  Mínimo 6 caracteres y máximo 8, al menos un dígito, una mayúscula y una minúscula.
-                </span>
+                <span class="form-text text-danger" *ngIf="miFormulario.controls['contrasenia'].errors && miFormulario.controls['contrasenia'].touched">La contraseña debe tener entre 6 y 8 carácteres.</span>
                 <label for="contrasenia" class="text-dark">Contraseña</label>
             </div>
             <div class="form-floating mt-2">
               <input class="form-control" id="nombre" formControlName="nombre" type="text">
-              <span class="form-text text-danger"
-                *ngIf="noValido('nombre')">
-                El nombre no es correcto
-              </span>
+              <span class="form-text text-danger" *ngIf="miFormulario.controls['nombre'].errors && miFormulario.controls['nombre'].touched">El nombre no es correcto.</span>
               <label for="nombre" class="text-dark">Nombre</label>
-          </div>
+            </div>
           <div class="form-floating mt-2">
             <input class="form-control" id="apellidos" formControlName="apellidos"type="text">
-            <span class="form-text text-danger"
-              *ngIf="noValido('apellidos')">
-              Los apellidos no son correctos, debe introducir dos apellidos.
-            </span>
+            <span class="form-text text-danger" *ngIf="miFormulario.controls['apellidos'].errors && miFormulario.controls['apellidos'].touched">Debe introducir dos apellidos</span>
             <label for="apellidos" class="text-dark">Apellidos</label>
           </div>
           <div class="form-floating mt-2">
             <input class="form-control" id="dni" formControlName="dni" type="text">
-            <span class="form-text text-danger"
-              *ngIf="noValido('dni')">
-              El DNI no es válido
-            </span>
+            <span class="form-text text-danger" *ngIf="miFormulario.controls['dni'].errors && miFormulario.controls['dni'].touched">El DNI no es válido, debe tener el siguiente formato: 12345678A</span>
             <label for="dni" class="text-dark">DNI</label>
           </div>
           <div class="form-floating mt-2">
             <input class="form-control" id="telefono" formControlName="telefono" type="text">
-            <span class="form-text text-danger"
-              *ngIf="noValido('telefono')">
-              El teléfono no es válido
-            </span>
+            <span class="form-text text-danger" *ngIf="miFormulario.controls['telefono'].errors && miFormulario.controls['telefono'].touched">Debe introducir un número de teléfono válido: 699999999</span>
             <label for="telefono" class="text-dark">Teléfono</label>
           </div>
-          <button class="mt-3 btn text-white text-center" [disabled]="miFormulario.pending" type="submit">REGÍSTRAME</button>
+          <button class="mt-3 btn text-white text-center" [disabled]="miFormulario.invalid" type="submit">REGÍSTRAME</button>
         </div>
         
     </form>

@@ -25,7 +25,8 @@ import { MisdatosComponent } from './misdatos/misdatos.component';
     AreaSociosRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   providers: [Guard]
 })
