@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
   constructor(private usuarioservice : UsuarioService,
     private router : Router) { }
 
+    /** 
   usuario: Usuario = {
     nombre: '',
     contrasenia: '',
@@ -25,35 +26,24 @@ export class LoginComponent implements OnInit {
     dni: '',
     telefono:'',
     email: '',
-  };
+  };*/
 
 
   login() {
     this.usuarioservice.login( this.email, this.contrasenia )
     .subscribe({
         next: (resp => {
+          
           localStorage.setItem('token',resp.access_token!)
-          this.router.navigateByUrl('/areasocios/opciones') 
+          this.usuarioservice.getIdUsuario();
+          this.router.navigateByUrl('/areasocios/opciones');
+          
       }),
         error: resp => {
           console.log(resp);
           this.mostrar= true;
           Swal.fire('Error', resp.error.message, 'error')
-         /** Swal.fire({
-            title: 'Error', 
-            text: resp.error.message,
-            icon: 'error',
-            width: 600,
-            padding: '3em',
-            color: '#716add',
-            //background: '#fff url(/images/trees.png)',
-            backdrop: `
-              rgba(0,0,123,0.4)
-              url("https://giphy.com/gifs/catakawan-spaceshackph-spaceshack-jQgsHinH2Kv7xgg1vx")
-              left top
-              no-repeat
-            `
-          })*/
+
         }
     });
   }

@@ -1,0 +1,24 @@
+.container{
+   margin: auto;
+   width: 100%;
+}
+.card-title{
+    background-color: rgb(212, 214, 163);
+}
+.btn {
+
+    font-size: 15px;
+    letter-spacing: 4px;
+    font-weight: 600;
+    color: #ffffff;
+    background: #CC9973;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: cocogose;
+}
+.boton{
+    margin: auto;
+    text-align: center;
+
+}

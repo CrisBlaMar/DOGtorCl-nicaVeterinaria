@@ -7,10 +7,11 @@
 .footer{
     background-color:#9CA07E;
     position:relative;
+    font-size: 15px;
     width: 100%;
 }
 .redesSociales{
-    width: 20px;
+    width: 15px;
 }
 
 
@@ -39,9 +40,22 @@
     position: relative;
     color: white;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 15px;
     margin: 30px;
   }
+
+.dropdown-menu{
+  background-color: #9CA07E;
+  color: white;
+  font-family: cocogose;
+}
+.dropdown-item{
+  color: white;
+}
+.dropdown-item:hover{
+  color: black;
+  cursor: pointer;
+}
 
 
 /** Para que el footer se mantenga fijado al final de la página en tablets y móviles*/

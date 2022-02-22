@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PedircitaComponent } from './pedircita/pedircita.component';
 import { CitaPreviaRoutingModule } from './citaPrevia-routing.module';
+import { RouterModule } from '@angular/router';
+import { Guard } from '../areasocios/guard.service';
 
 
 
@@ -11,7 +13,9 @@ import { CitaPreviaRoutingModule } from './citaPrevia-routing.module';
   ],
   imports: [
     CommonModule,
-    CitaPreviaRoutingModule
-  ]
+    CitaPreviaRoutingModule,
+    RouterModule
+  ],
+  providers: [Guard]
 })
 export class CitaPreviaModule { }

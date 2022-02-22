@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Mascota } from '../../interfaces/mascota.interfaces';
 import { UsuarioService } from '../usuarios-services/usuario.service';
 import Swal from 'sweetalert2';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registromascota',
@@ -12,7 +12,8 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 })
 export class RegistromascotaComponent implements OnInit {
 
-  constructor(private form : FormBuilder, private usuarioservice: UsuarioService) { }
+  constructor(private form : FormBuilder, private usuarioservice: UsuarioService,
+    private router : Router) { }
 
   ngOnInit(): void {
   }
@@ -25,50 +26,33 @@ export class RegistromascotaComponent implements OnInit {
     sexo: []
   })
 
-  getEmailUsuario() {
-    this.usuarioservice.getEmail()
-    .subscribe((resp) => {
-      console.log(resp);
-      console.log("as")
-      localStorage.setItem('email',resp);
-    });
-  }
 
-
-  obtenerid(){
-    this.usuarioservice.getEmail()
-    .subscribe ({ 
-      next : (resp =>{
-        console.log(resp)
-      }),
-      error : err =>{
-
-      }
-      
-    })
-    
-  }
   
 
-
   hacerRegistro (){
-    this.getEmailUsuario();
-    const email = localStorage.getItem('email') as string;
-    console.log(email)
+    
+    const email = JSON.parse(localStorage.getItem('email') || '{}');
     let mascota : Mascota = this.miMascota.value;
     this.usuarioservice.registroMascota(mascota, email)
     .subscribe({
       next: (resp => {
-        
         this.miMascota.reset();
+        Swal.fire({
+          title: 'Tu mascota ha sido registrada :)',
+          icon: 'success',
+          showDenyButton: true,
+          confirmButtonText: 'Volver a Opciones',
+          denyButtonText: `Registrar otra mascota`,
+        }).then((result) => {
+          if (result.isConfirmed) {
+            this.router.navigateByUrl('/areasocios/opciones')
+          } else if (result.isDenied) {
+            this.router.navigateByUrl("/areasocios/registromascota")
+          }
+        })
       }),
       error : err => {
-
-        Swal.fire({
-          title: '¡ERROR!',
-          text: 'No ha podido registrar a su mascota',
-          icon: 'error'
-        })
+        Swal.fire('Error', err.error.message, 'error')
         
       }
     });

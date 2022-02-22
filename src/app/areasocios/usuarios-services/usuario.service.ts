@@ -26,8 +26,8 @@ export class UsuarioService {
     //poner también en el registrer
   }
 
-  
 
+  /**Método para validar el token */
   validarToken() : Observable<AuthResponse>{
     const url = `${ this.baseUrl }/auth/login`;
     const headers = new HttpHeaders()
@@ -35,6 +35,7 @@ export class UsuarioService {
     return this.httpclient.get<AuthResponse>( url, { headers } )     
   }
 
+  /**Método para registrar un usuario */
   registro(usuario : Usuario){
     const url = `${this.baseUrl}/auth/register`;
     const body = usuario;
@@ -43,6 +44,7 @@ export class UsuarioService {
     return this.httpclient.post<AuthResponse>(url, body, {headers:opcionHeader}); 
   }
 
+  /**Método para registrar mascotas a un usuario */
   registroMascota (mascota : Mascota, email : string){
     const url = `${this.baseUrl}/user/${email}/mascota`;
     const body =  mascota;
@@ -60,15 +62,38 @@ export class UsuarioService {
 
 
 
-
-  getEmail(){
+  /**Método para obetener del token el usuario y su email */
+  getIdUsuario(){
     const url = `${this.baseUrl}/user`;
     let token = localStorage.getItem("token")
     const opcionHeader = new HttpHeaders()
     .set('Authorization', `Bearer ${token}`);
-    return this.httpclient.get<string>(url, {headers : opcionHeader});
+    this.httpclient.get<string>(url, {headers : opcionHeader})
+    .subscribe(
+      resp =>{
+        localStorage.setItem('email', JSON.stringify(resp));
+      }
+    )
   }
   
+  /**Método para listar las mascotas de un usuario */
+  obtenerMascotasUsuario(email : string){
+    const url = `${this.baseUrl}/user/${email}/mascota`;
+    let token = localStorage.getItem('token');
+    const opcionHeader = new HttpHeaders()
+    .set('Authorization', `Bearer ${token}`);
+    return this.httpclient.get<Mascota []>(url, {headers:opcionHeader});
+  }
+
+
+  /**Método para obtener los datos de un usuario */
+  obtenerDatosUsuario (email:string){
+    const url = `${this.baseUrl}/user/${email}`;
+    let token = localStorage.getItem('token');
+    const opcionHeader = new HttpHeaders()
+    .set('Authorization', `Bearer ${token}`);
+    return this.httpclient.get<Usuario>(url, {headers:opcionHeader});
+  }
 
   
 

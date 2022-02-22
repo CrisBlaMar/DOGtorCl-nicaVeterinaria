@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, Router, RouterStateSnapshot } from "@angular/router";
+import { ActivatedRouteSnapshot, CanActivate,  Router, RouterStateSnapshot } from "@angular/router";
 import { map, Observable, catchError, of } from 'rxjs';
 import { UsuarioService } from './usuarios-services/usuario.service';
 import Swal from 'sweetalert2';
@@ -24,7 +24,7 @@ export class Guard implements CanActivate{
                 console.log(err);
                 Swal.fire({
                     title: '¡ERROR!',
-                    text: 'No puede acceder. La sesión ha expirado',
+                    text: 'No puede acceder. Debe iniciar sesión',
                     icon: 'error'
                   });
                 this.router.navigateByUrl('/areasocios');

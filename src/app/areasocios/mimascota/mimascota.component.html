@@ -1,1 +1,20 @@
+<div class="container row" >
+    
+    <div class="card text-center col-3 mt-2" *ngFor="let pet of mascota">
+        <img src="../../../assets/img/galeria6.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <p class="card-title">{{pet.nombre}}</p>
+            <p class="card-text">{{pet.raza}}</p>
+            <p class="card-text">{{pet.pelaje}}</p>
+            <p class="card-text">{{pet.especie}}</p>
+            <p class="card-text">{{pet.sexo}}</p>
+        </div>
+    </div>
+</div>
 
+
+
+
+<div class="boton">
+    <button class="btn mt-4 mb-4" type="button" routerLink="/areasocios/opciones">Regresar a Opciones</button>
+</div>

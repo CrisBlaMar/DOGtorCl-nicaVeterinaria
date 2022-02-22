@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UsuarioService } from '../../areasocios/usuarios-services/usuario.service';
 import { Usuario } from '../../interfaces/usuario.interfaces';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
@@ -12,7 +13,7 @@ import Swal from 'sweetalert2';
 export class RegistroComponent implements OnInit {
 
   constructor(private usuarioservice : UsuarioService,
-    private form : FormBuilder) { }
+    private form : FormBuilder, private router : Router) { }
 
   miFormulario: FormGroup = this.form.group({
     nombre: ['',[Validators.required, Validators.pattern('^[A-Za-z ]+$')]],
@@ -23,6 +24,7 @@ export class RegistroComponent implements OnInit {
     dni:['', [ Validators.required, Validators.pattern('[0-9]{8}[A-Za-z]{1}') ]]
   })
 
+  
   hacerRegistro (){
     let usuario : Usuario = this.miFormulario.value;
     this.usuarioservice.registro(usuario)
@@ -31,6 +33,17 @@ export class RegistroComponent implements OnInit {
        // this.usuarioservice.setToken(resp.token);
        //resetamos los datos para no tener que borrar 
         this.miFormulario.reset();
+        Swal.fire({
+          title: '¡Enhorabuena! Ya formas parte de nuestra manada :)',
+          background: 'url(../../../assets/img/perrorecorte.jpeg)',
+          icon: 'success',
+          showCancelButton: true,
+          confirmButtonText: `Iniciar Sesión`,
+        }).then((result) => {
+          if (result.isConfirmed) {
+            this.router.navigateByUrl('/areasocios')
+          }
+        })
       }),
       error : err => {
         console.log(err);

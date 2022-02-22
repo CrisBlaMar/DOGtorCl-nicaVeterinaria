@@ -1,1 +1,38 @@
-<p>pedircita works!</p>
+<div class="formulariocita container-fluid row">
+    
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 mt-3">
+        <h1 id="logintexto"><strong>Cita Previa</strong></h1>
+        <p>¿Necesitas que atendamos a tu mascota?</p>
+        <p>Rellena los siguientes campos</p>
+        <form class="citaprevia" >
+            <!--<div class="form-group">
+                <label for="email"><i class="fa fa-envelope"></i></label>
+                <input type="text" name="email" id="email" placeholder="   Email"  />
+            </div><br>-->
+            <div class="form-group">
+                <label for="mascota" class="text-white"><i class="fa fa-paw" aria-hidden="true"></i> Selecciona para quién quieres la cita:</label><br><br>
+                <select name="mascota" >
+                    <option *ngFor="let pet of mascota">{{pet.nombre}}</option> 
+                </select>
+            </div><br>
+            <div class="form-group">
+                <label for="servicios" class="text-white"><i class="fa fa-paw" aria-hidden="true"></i> ¿Qué servicios necesitas?</label><br><br>
+                <select name="servicios" multiple>
+                    <option *ngFor="let serv of servicio" >{{serv.nombre}} - {{serv.tarifa.precio}} €</option> 
+                </select>
+            </div><br>
+            <div class="form-group">
+                <label for="fecha" class="text-white"><i class="fa fa-time"></i>Selecciona una fecha</label><br><br>
+                <input type="datetime-local" name="fecha" id="fecha"/>
+            </div><br>
+            <div class="btn">
+                <button class="button">Pedir Cita</button>
+            </div>
+        </form><br><br>
+        <p class="text-white">¿Aún no formas parte de nuestra manada?</p>
+        <a [routerLink]="['/quierosersocio']" routerLinkActive="router-link-active" > Regístrate aquí</a>
+        
+    </div>
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 divimg"></div>
+    
+</div>

@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ServiciosComponent } from './servicios/servicios.component';
 import { NuestrosServiciosRoutingModule } from '../nuestros-servicios/nuestrosServicios-routing.module';
-import { DataTablesModule } from 'angular-datatables';
 import { HttpClientModule } from '@angular/common/http';
+import { DataTablesModule } from 'angular-datatables';
 
 
 @NgModule({
@@ -13,8 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule,
     NuestrosServiciosRoutingModule,
-    DataTablesModule,
-    HttpClientModule
+    HttpClientModule,
+    DataTablesModule
   ]
 })
 export class NuestrosServiciosModule { }

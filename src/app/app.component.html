@@ -20,8 +20,22 @@
           <li class="nav-item ">
             <a class="enlace" [routerLink]="['/sobrenosotros']" routerLinkActive="active" >SOBRE NOSOTROS</a>
           </li>
-          <li class="nav-item ">
-            <a class="enlace" [routerLink]="['/areasocios']" routerLinkActive="active" >ÁREA DE SOCIOS</a>
+          <li class="nav-item dropdown">
+            <div class="dropdown">
+              <a class="enlace dropdown-toggle" id="dropdownMenuButton1" 
+              data-bs-toggle="dropdown" aria-expanded="false">
+                ÁREA DE SOCIOS
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li class="text-center">¿Dónde quiéres ir?</li>
+                <li><a class="dropdown-item" [routerLink]="['/areasocios']">INICIAR SESIÓN</a></li>
+                <li><a class="dropdown-item" [routerLink]="['/areasocios/opciones']">OPCIONES</a></li>
+                <li><a class="dropdown-item" [routerLink]="['/areasocios/mimascota']">MI MASCOTA</a></li>
+                <li><a class="dropdown-item" [routerLink]="['/areasocios/registromascota']">REGISTRAR UNA MASCOTA NUEVA</a></li>
+                <li><a class="dropdown-item" [routerLink]="['/areasocios/misdatos']" >MIS DATOS</a></li>
+                <li *ngIf="mostrar" ><a class="dropdown-item"  (click)="cerrarSesion()">Cerrar Sesión</a></li>
+              </ul>
+            </div>
           </li>
           <li class="nav-item ">
             <a class="enlace" [routerLink]="['/quierosersocio']" routerLinkActive="active" >QUIERO SER SOCIO</a>

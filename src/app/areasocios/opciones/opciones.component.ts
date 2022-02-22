@@ -11,11 +11,6 @@ import { Router } from '@angular/router';
 
 export class OpcionesComponent implements OnInit {
 
-
-  cerrarSesion(){
-    localStorage.clear();
-  }
-
   constructor() { }
 
   ngOnInit(): void {

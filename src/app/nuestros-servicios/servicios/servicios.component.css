@@ -1,3 +1,11 @@
 h1{
-    background-color: #D3B094;
+    /**background-color: #D3B094;*/
+    color: black;
+}
+.container{
+    margin: auto;
+}
+.table{
+    background-color: #CC9973;
+    color: white;
 }

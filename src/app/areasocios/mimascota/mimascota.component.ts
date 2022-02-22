@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuarioService } from '../usuarios-services/usuario.service';
+import { Mascota } from '../../interfaces/mascota.interfaces';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-mimascota',
@@ -7,9 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MimascotaComponent implements OnInit {
 
-  constructor() { }
+  constructor(private usuarioservice : UsuarioService, ) { }
+
+  mascota : Mascota [] = [];
+
+  mostrarMascotas(){
+    const email = JSON.parse(localStorage.getItem('email') || '{}');
+    this.usuarioservice.obtenerMascotasUsuario(email)
+    .subscribe({
+      next: (resp => {
+      this.mascota = resp;
+    }),
+      error: resp => {
+        Swal.fire('Error', resp.error.message, 'error')
+        
+      }
+  });
+  }
 
   ngOnInit(): void {
+
+    this.mostrarMascotas();
   }
 
 }

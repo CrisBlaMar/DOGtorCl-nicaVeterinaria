@@ -4,6 +4,8 @@ import { LoginComponent } from './login/login.component';
 import { OpcionesComponent } from './opciones/opciones.component';
 import { Guard } from './guard.service';
 import { RegistromascotaComponent } from './registromascota/registromascota.component';
+import { MimascotaComponent } from './mimascota/mimascota.component';
+import { MisdatosComponent } from './misdatos/misdatos.component';
 
 const routes: Routes = [
   {
@@ -16,7 +18,9 @@ const routes: Routes = [
   //no sabe a quien llamar, porque si lo pusieramos como un hijo, no nos sustituiría el login,
   //lo que haría sería añadirlo dentro del propio componente donde se está mostrando el login 
 { path:'opciones', component: OpcionesComponent, canActivate: [Guard]},
-{ path:'registromascota', component: RegistromascotaComponent, canActivate: [Guard]}
+{ path:'registromascota', component: RegistromascotaComponent, canActivate: [Guard]},
+{ path:'mimascota', component: MimascotaComponent, canActivate: [Guard]},
+{ path:'misdatos', component: MisdatosComponent, canActivate: [Guard]}
 
 
 
