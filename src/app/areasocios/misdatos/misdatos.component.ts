@@ -12,7 +12,7 @@ export class MisdatosComponent implements OnInit {
 
   constructor(private usuarioservice : UsuarioService) { }
 
-  usuario : Usuario [] = [];
+  
 
   nombre: string ='';
   apellidos: string ='';

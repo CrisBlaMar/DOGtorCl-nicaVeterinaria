@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RegistroComponent } from './registro/registro.component';
 import { QuieroSerSocioRoutingModule } from './quieroSerSocio-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DondeEstoyModule } from '../donde-estoy/donde-estoy.module';
 
 
 
@@ -13,7 +14,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     QuieroSerSocioRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DondeEstoyModule
   ]
 })
 export class QuieroSerSocioModule { }

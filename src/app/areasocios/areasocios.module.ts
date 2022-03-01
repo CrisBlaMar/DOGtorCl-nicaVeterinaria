@@ -9,6 +9,7 @@ import { Guard } from './guard.service';
 import { MimascotaComponent } from './mimascota/mimascota.component';
 import { RegistromascotaComponent } from './registromascota/registromascota.component';
 import { MisdatosComponent } from './misdatos/misdatos.component';
+import { DondeEstoyModule } from '../donde-estoy/donde-estoy.module';
 
 
 
@@ -26,7 +27,8 @@ import { MisdatosComponent } from './misdatos/misdatos.component';
     ReactiveFormsModule,
     FormsModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DondeEstoyModule
   ],
   providers: [Guard]
 })

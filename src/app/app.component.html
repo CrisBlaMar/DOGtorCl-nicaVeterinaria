@@ -1,5 +1,5 @@
 <header>
-  <nav class="navbar navbar-expand-lg navbar-light">
+  <nav class="navbar navbar-expand-lg ">
     <div class="container-fluid">
       <a class="navbar-brand" [routerLink]="['']" routerLinkActive="router-link-active">
       <img class="logotipo" src="../assets/img/logopngfondo.png" alt="">
@@ -9,42 +9,42 @@
       aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse align-items-right" id="navbarNav">
+      <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item ">
-            <a class="enlace" [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" >INICIO</a>
+            <a class="enlace" [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" ><i class="fa fa-home" aria-hidden="true"></i> INICIO</a>
           </li>
           <li class="nav-item ">
-            <a class=" enlace" [routerLink]="['/servicios']" routerLinkActive="active"  >SERVICIOS</a>
+            <a class=" enlace" [routerLink]="['/servicios']" routerLinkActive="active"  ><i class="fa fa-list" aria-hidden="true"></i> SERVICIOS</a>
           </li>
           <li class="nav-item ">
-            <a class="enlace" [routerLink]="['/sobrenosotros']" routerLinkActive="active" >SOBRE NOSOTROS</a>
+            <a class="enlace" [routerLink]="['/sobrenosotros']" routerLinkActive="active" ><i class="fa fa-users" aria-hidden="true"></i> SOBRE NOSOTROS</a>
           </li>
           <li class="nav-item dropdown">
             <div class="dropdown">
               <a class="enlace dropdown-toggle" id="dropdownMenuButton1" 
               data-bs-toggle="dropdown" aria-expanded="false">
-                ÁREA DE SOCIOS
+              <i class="fa fa-user" aria-hidden="true"></i> ÁREA DE SOCIOS
               </a>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li class="text-center">¿Dónde quiéres ir?</li>
-                <li><a class="dropdown-item" [routerLink]="['/areasocios']">INICIAR SESIÓN</a></li>
-                <li><a class="dropdown-item" [routerLink]="['/areasocios/opciones']">OPCIONES</a></li>
-                <li><a class="dropdown-item" [routerLink]="['/areasocios/mimascota']">MI MASCOTA</a></li>
-                <li><a class="dropdown-item" [routerLink]="['/areasocios/registromascota']">REGISTRAR UNA MASCOTA NUEVA</a></li>
-                <li><a class="dropdown-item" [routerLink]="['/areasocios/misdatos']" >MIS DATOS</a></li>
-                <li *ngIf="mostrar" ><a class="dropdown-item"  (click)="cerrarSesion()">Cerrar Sesión</a></li>
+                <li><a class="dropdown-item" [routerLink]="['/areasocios']"><i class="fa fa-arrow-right" aria-hidden="true"></i> INICIAR SESIÓN</a></li>
+                <li><a class="dropdown-item" [routerLink]="['/areasocios/opciones']"><i class="fa fa-list-ol" aria-hidden="true"></i> OPCIONES</a></li>
+                <li><a class="dropdown-item" [routerLink]="['/areasocios/mimascota']"><i class="fa fa-paw" aria-hidden="true"></i> MI MASCOTA</a></li>
+                <li><a class="dropdown-item" [routerLink]="['/areasocios/registromascota']"><i class="fa fa-paw" aria-hidden="true"></i><i class="fa fa-plus" aria-hidden="true"></i> REGISTRAR UNA MASCOTA NUEVA</a></li>
+                <li><a class="dropdown-item" [routerLink]="['/areasocios/misdatos']" ><i class="fa fa-address-card" aria-hidden="true"></i> MIS DATOS</a></li>
+                <li *ngIf="mostrar" ><a class="dropdown-item"  (click)="cerrarSesion()"><i class="fa fa-times" aria-hidden="true"></i> Cerrar Sesión</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item ">
-            <a class="enlace" [routerLink]="['/quierosersocio']" routerLinkActive="active" >QUIERO SER SOCIO</a>
+            <a class="enlace" [routerLink]="['/quierosersocio']" routerLinkActive="active" ><i class="fa fa-user" aria-hidden="true"></i><i class="fa fa-plus" aria-hidden="true"></i> QUIERO SER SOCIO</a>
           </li>
           <li class="nav-item ">
-            <a class="enlace" [routerLink]="['/citaprevia']" routerLinkActive="active" >CITA PREVIA</a>
+            <a class="enlace" [routerLink]="['/citaprevia']" routerLinkActive="active" ><i class="fa fa-calendar" aria-hidden="true"></i> CITA PREVIA</a>
           </li>
           <li  class="nav-item ">
-            <a class="enlace" [routerLink]="['/contacto']" routerLinkActive="router-link-active" >CONTACTO</a>
+            <a class="enlace" [routerLink]="['/contacto']" routerLinkActive="router-link-active" ><i class="fa fa-envelope" aria-hidden="true"></i> CONTACTO</a>
           </li>
         </ul>
       </div>

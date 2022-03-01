@@ -55,6 +55,8 @@ export class UsuarioService {
     return this.httpclient.post<AuthResponse>(url, body, {headers:opcionHeader});
   }
 
+
+
   getEmailUsuario(email:string){
     const url = `${this.baseUrl}/user/${email}`;
     return this.httpclient.get<Usuario>(url);

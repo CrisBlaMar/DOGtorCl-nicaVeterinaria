@@ -4,6 +4,7 @@ import { PedircitaComponent } from './pedircita/pedircita.component';
 import { CitaPreviaRoutingModule } from './citaPrevia-routing.module';
 import { RouterModule } from '@angular/router';
 import { Guard } from '../areasocios/guard.service';
+import { DondeEstoyModule } from '../donde-estoy/donde-estoy.module';
 
 
 
@@ -14,7 +15,8 @@ import { Guard } from '../areasocios/guard.service';
   imports: [
     CommonModule,
     CitaPreviaRoutingModule,
-    RouterModule
+    RouterModule,
+    DondeEstoyModule
   ],
   providers: [Guard]
 })
