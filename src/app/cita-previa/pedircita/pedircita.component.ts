@@ -19,7 +19,7 @@ export class PedircitaComponent implements OnInit {
 
   mostrarMascotas(){
     const email = JSON.parse(localStorage.getItem('email') || '{}');
-    this.usuarioservice.obtenerMascotasUsuario(email)
+    this.usuarioservice.obtenerMascotasUsuario()
     .subscribe({
       next: (resp => {
       this.mascota = resp;

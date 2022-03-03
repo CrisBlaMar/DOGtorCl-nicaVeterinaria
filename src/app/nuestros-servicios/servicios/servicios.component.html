@@ -15,27 +15,30 @@
         <tbody class="tbody">
         <tr *ngFor="let servi of servicios">
             <td class="fondo">{{ servi.nombre }}</td>
-            <td class="fondo">{{ servi.tarifa.precio}} €</td>
+            <td class="fondo">{{servi.tarifas}}€</td>
             <td class="text-center fondo"><app-detalle-servicio (emitter)="eventohijo($event)"></app-detalle-servicio></td>
-            <!--MODAL-->
-            <div class="modal fade" id="exampleModal" tabindex="-1" 
-              aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog" style="width: 28%;" >
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h3>{{servi.nombre}}</h3>
-                  </div>
-                  <div class="modal-body">
-                <!--CONTENIDO-->
-                    <div class="container-fluid text-center">
-                      <div class="col-12">
-                          <p>{{servi.descripcion}}</p>
-                      </div>
-                    </div>      
+            
+              <!--MODAL-->
+              <div class="modal fade" id="exampleModal" tabindex="-1" 
+                aria-labelledby="exampleModalLabel" aria-hidden="true" >
+                <div class="modal-dialog" style="width: 28%;" >
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 class="text-center">{{mensajehijo}}</h4>
+                    </div>
+                    <div class="modal-body">
+                  <!--CONTENIDO-->
+                      <div class="container-fluid text-center">
+                        <div class="col-12">
+                            <h3><strong>{{servi.nombre}}</strong></h3>
+                            <p>{{servi.descripcion}}</p>
+                        </div>
+                      </div>      
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            
         </tr>
       </tbody>
     </table>  

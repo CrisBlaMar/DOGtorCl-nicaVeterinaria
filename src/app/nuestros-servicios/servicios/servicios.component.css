@@ -1,14 +1,15 @@
 h1{
     /**background-color: #D3B094;*/
-    color: black;
+    color: #FAE4CF;
+    background-color: #858558;
 }
 .container{
     margin: auto;
 }
 .table{
-    background-color: #6c7c40;
+    background-color: #E9BB97;
 }
 .fondo{
-    background-color: #c1cca2;
+    background-color: #FAE4CF;
     
 }

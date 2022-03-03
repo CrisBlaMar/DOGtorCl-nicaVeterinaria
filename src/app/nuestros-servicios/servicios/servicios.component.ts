@@ -12,19 +12,16 @@ import { Subject } from 'rxjs';
 export class ServiciosComponent implements OnDestroy, OnInit{
 
   constructor(private servicioService : ServicioService) { }
-  @Input()
-  
 
   servicios : Servicio [] = [];
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject<any>();
 
   mensajehijo: string= '';
-
+  
   eventohijo(mensaje: string){
     this.mensajehijo = mensaje;
   }
-
 
 
   mostrarServicios(){
@@ -32,6 +29,7 @@ export class ServiciosComponent implements OnDestroy, OnInit{
     .subscribe({
       next: (resp => {
       this.servicios = resp;
+      console.log(this.servicios);
       this.dtTrigger.next(this.servicios); 
     }),
       error: resp => {

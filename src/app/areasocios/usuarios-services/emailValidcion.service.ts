@@ -8,13 +8,13 @@ import { UsuarioService } from './usuario.service';
 @Injectable({
   providedIn: 'root'
 })
-export class EmailValidatorService implements AsyncValidator {
+export class EmailValidatorService /**implements AsyncValidator*/ {
 
     private urlBase: string = environment.baseUrl;
     constructor( private httpclient: HttpClient, private usuarioservice : UsuarioService) { }
 
-    validate(control: AbstractControl): Observable<ValidationErrors | null> {
-      const email = control.value; //->este es el valor del campo email del formulario
+    /**validate(control: AbstractControl): Observable<ValidationErrors | null> {
+     const email = control.value; //->este es el valor del campo email del formulario
       return this.usuarioservice.getEmailUsuario(email)
       .pipe(
         map (resp => {
@@ -28,7 +28,7 @@ export class EmailValidatorService implements AsyncValidator {
            return of(null);
         })
       );
-     }
+     }*/
 
 
 }

@@ -13,6 +13,7 @@ export class OpcionesComponent implements OnInit {
 
   constructor() { }
 
+
   ngOnInit(): void {
   }
 

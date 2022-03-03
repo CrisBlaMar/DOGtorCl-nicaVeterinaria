@@ -1,8 +1,12 @@
 h1{
-    background-color: #D3B094;
+    color: #FAE4CF;
+    background-color: #858558;
+}
+span{
+    letter-spacing: 1px;
 }
 #imagenes{
-    width: 60%;
+    width: 50%;
 }
 #mapa{
     width: 70%;
@@ -12,17 +16,20 @@ h1{
     text-align: center;
 }
 .sobredogtor{
-    background-color: #D3B094;
+    color: #FAE4CF;
+    font-size: 40px;
+    background-color: #858558;
 }
 p, i{
     font-size: 15px;
+    color: white;
 }
 
 .card{
     text-align: center;
     margin: auto;
-    background-color: #798368;
-    color: white;
+    background-color: #FAE4CF;
+    color: rgb(0, 0, 0);
     padding-left: 4px;
     padding-right: 4px;
     padding-top: 4px;
@@ -30,7 +37,7 @@ p, i{
 
 }
 .card:hover{
-    border-color: #D3B094;
+    border-color: #E9BB97;
     border-width: 5px;
 }
 .card-img-top{
@@ -39,11 +46,12 @@ p, i{
     border-bottom-left-radius: 0px;
 }
 a{
-    border-color: #D6B094;
+    border-color: #E9BB97;
     border-radius: 50px;
-    color: black;
+    color: rgb(255, 255, 255);
 }
 #trabajo{
     font-size: 15px;
     font-style: normal;
+    color:#444421;
 }

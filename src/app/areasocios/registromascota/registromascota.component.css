@@ -1,38 +1,53 @@
 .formulariologin{
     width: 60%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding-top: 100px;
-    padding-bottom: 100px;
+    margin: auto;
     text-align: center;
    /** background-color: #D3B094;*/
     border-radius: 20px;
     color: white;
-    background-image: url("../../../assets/img/perrorecorte.jpeg");
     background-size: cover;
+    background-color: #FAE4CF;
 
+}
+img{
+    width: 50%;
 }
 input{
     border-top: none;
     border-right: none;
     border-left: none;
-    background-color: rgba(255, 255, 255, 0.555) ;
-    width: 100%;
+    background-color: #FAE4CF;
+    border-color: #5E5E34;
 }
-.inputSexo{
-    background-color: rgba(255, 255, 255, 0.555);
-    color: black;
+::placeholder { 
+    color: #5E5E34; 
+  }
+.inputSexo, label{
+    color: #5E5E34; 
 }
-button{
-    background-color: #c98c47;
-    border-color: #c98c47;
-}
+
+button {
+    min-width: 40px;
+    min-height: 20px;
+    font-size: 15px;
+    letter-spacing: 4px;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #CC9973;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: cocogose;
+    }
 button:hover{
     background-color: #925c1f;
     border-color: #925c1f;
 }
 #logintexto{
-    background-color: rgba(224, 181, 125, 0.397) ;
+    color: #5E5E34;
+}
+p{
+    color: #5E5E34;
 }
 
 /*tablets*/

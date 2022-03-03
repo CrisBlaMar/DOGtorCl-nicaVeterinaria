@@ -16,10 +16,11 @@ export class MimascotaComponent implements OnInit {
 
   mostrarMascotas(){
     const email = JSON.parse(localStorage.getItem('email') || '{}');
-    this.usuarioservice.obtenerMascotasUsuario(email)
+    this.usuarioservice.obtenerMascotasUsuario()
     .subscribe({
       next: (resp => {
       this.mascota = resp;
+      console.log(resp);
     }),
       error: resp => {
         Swal.fire('Error', resp.error.message, 'error')

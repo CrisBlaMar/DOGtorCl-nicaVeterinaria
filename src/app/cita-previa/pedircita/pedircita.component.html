@@ -20,7 +20,7 @@
             <div class="form-group">
                 <label for="servicios" class="text-white"><i class="fa fa-paw" aria-hidden="true"></i> ¿Qué servicios necesitas?</label><br><br>
                 <select name="servicios" multiple>
-                    <option *ngFor="let serv of servicio" >{{serv.nombre}} - {{serv.tarifa.precio}} €</option> 
+                    <option *ngFor="let serv of servicio" >{{serv.nombre}} - {{serv.tarifas}} €</option> 
                 </select>
             </div><br>
             <div class="form-group">
@@ -33,6 +33,8 @@
         </form><br><br>
         
     </div>
-    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 divimg"></div>
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 divimg">
+        <img src="../../../assets/img/veterinariopng.png" alt="">
+    </div>
     
 </div>

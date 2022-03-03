@@ -45,8 +45,8 @@ export class UsuarioService {
   }
 
   /**Método para registrar mascotas a un usuario */
-  registroMascota (mascota : Mascota, email : string){
-    const url = `${this.baseUrl}/user/${email}/mascota`;
+  registroMascota (mascota : Mascota){
+    const url = `${this.baseUrl}/user/mascota`;
     const body =  mascota;
     let token = localStorage.getItem('token');
     const opcionHeader = new HttpHeaders()
@@ -57,10 +57,10 @@ export class UsuarioService {
 
 
 
-  getEmailUsuario(email:string){
+ /**  getEmailUsuario(email:string){
     const url = `${this.baseUrl}/user/${email}`;
     return this.httpclient.get<Usuario>(url);
-  }
+  }*/
 
 
 
@@ -79,8 +79,8 @@ export class UsuarioService {
   }
   
   /**Método para listar las mascotas de un usuario */
-  obtenerMascotasUsuario(email : string){
-    const url = `${this.baseUrl}/user/${email}/mascota`;
+  obtenerMascotasUsuario(){
+    const url = `${this.baseUrl}/user/mascota`;
     let token = localStorage.getItem('token');
     const opcionHeader = new HttpHeaders()
     .set('Authorization', `Bearer ${token}`);

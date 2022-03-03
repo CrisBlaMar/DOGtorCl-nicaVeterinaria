@@ -9,27 +9,26 @@
     padding-bottom: 10px;
     text-align: center;
     border-radius: 20px;
-    color: white;
-    background-color: #a19d80;
+    color: #5E5E34;
+    background-color: #FAE4CF;
     background-size: cover;
 
 }
 label{
-  color: #D1D8C6;
+  color: #5E5E34;
 }
 input{
     border-top: none;
     border-right: none;
     border-left: none;
-    background-color: #a19d80;
-    color: #ffffff;
-    border-color: white;
+    background-color: #FAE4CF;
+    border-color: #5E5E34;
 }
 ::placeholder { 
-  color: rgb(255, 255, 255); 
+  color: #5E5E34; 
 }
 a{
-  color: #582c0a;
+  color: #5E5E34;
   letter-spacing: 3px;
   font-size: 20px;
 }
@@ -42,7 +41,7 @@ img{
 
 #logintexto{
     /**color: #c9892b;*/
-    color: #ffffff;
+    color: #5e5e34;
 }
 
 

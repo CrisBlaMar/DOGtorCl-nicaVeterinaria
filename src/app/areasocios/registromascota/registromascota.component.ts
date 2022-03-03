@@ -31,9 +31,8 @@ export class RegistromascotaComponent implements OnInit {
 
   hacerRegistro (){
     
-    const email = JSON.parse(localStorage.getItem('email') || '{}');
     let mascota : Mascota = this.miMascota.value;
-    this.usuarioservice.registroMascota(mascota, email)
+    this.usuarioservice.registroMascota(mascota)
     .subscribe({
       next: (resp => {
         this.miMascota.reset();

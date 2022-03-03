@@ -12,7 +12,8 @@
     font-family: cocogose;
     }
 img{
-    width: 70%;
+  margin-top: 35%;
+    width: 150%;
 }
 label{
     color: #D1D8C6;
@@ -49,9 +50,10 @@ a{
   font-size: 20px;
 }
 .divimg{
-  background-image: url(../../../assets/img/gal4.jpeg);
+  /**background-image: url(../../../assets/img/veterinariopng.png);*/
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
+
 }
 h1{
   font-size: 50px;

@@ -1,10 +1,45 @@
 <app-ubicacion info="MIS  DATOS"></app-ubicacion>
-<div class="container-fluid text-center" >
-    <h3>Bienvenid@ {{nombre}}</h3>
-    <h4>Estos son tus datos</h4>
-    <p>Nombre : {{nombre}}</p>
-    <p>Apellidos: {{apellidos}}</p>
-    <p>DNI: {{dni}}</p>
-    <p>Teléfono: {{telefono}}</p>
-    <p>Email: {{email}}</p>
+
+<div class="texto text-center">
+    <h1><strong>Mis Datos</strong></h1>
+</div>
+
+<div class="container-fluid text-center row mb-5" >
+
+    <div class="foto">
+        <img src="../../../assets/img/misdatosfoto.png" alt="">
+    </div>
+
+    <div class="datos">
+        <!--<p class="mt-2">Nombre: <span>{{nombre}}</span></p>
+        <p>Apellidos: <span>{{apellidos}}</span></p>
+        <p>DNI: <span>{{dni}}</span></p>
+        <p>Teléfono:  <span>{{telefono}}</span></p>
+        <p>Email: <span>{{email}}</span></p>-->
+        <div class="table-responsive mt-3">
+            <table class="table table-borderless">
+                <tr>
+                    <td>Nombre</td>
+                    <td class="p radio1">{{nombre}}</td>  
+                </tr>
+                <tr>
+                   <td>Apellidos</td> 
+                   <td class="p">{{apellidos}}</td>
+                </tr>
+                <tr>
+                    <td>Teléfono</td>
+                    <td class="p">{{telefono}}</td>
+                </tr>
+                <tr>
+                    <td>DNI</td>
+                    <td class="p">{{dni}}</td>
+                </tr>
+                <tr>
+                    <td>E-mail</td>
+                    <td class="p radio2">{{email}}</td>
+                </tr> 
+            </table>
+        </div>
+    </div>
+
 </div>

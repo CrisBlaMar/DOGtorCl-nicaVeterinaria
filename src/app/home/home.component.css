@@ -2,9 +2,12 @@
 h1, p{
     margin:auto;
 }
-
+.textoenlaces{
+    color: #fafafa;
+    font-size: 20px;
+}
 .iniciopagina{
-    background-color: #78755F;
+    background-color: #7F7F4C;
 }
 
 #nombreclinica{

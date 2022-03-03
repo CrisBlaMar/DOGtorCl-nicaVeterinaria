@@ -10,11 +10,19 @@ export class DetalleServicioComponent implements OnInit {
 
   constructor() { }
 
-  @Output() emitter : EventEmitter <string> = new EventEmitter();
-  mensaje : string = ''; 
+  @Output() 
+  emitter : EventEmitter <string> = new EventEmitter();
+  
+  email: string = JSON.parse(localStorage.getItem('email') || '{}');
 
   masInfo(){
-    this.emitter.emit(this.mensaje);
+    console.log(this.email);
+    if(localStorage.getItem('token') == undefined){
+      this.emitter.emit("¡Hola!, aquí tienes más info") ;
+    }else{
+      this.emitter.emit("¡Hola, " + this.email + "! Aquí tienes más info") ;
+    }
+    
   }
 
 
