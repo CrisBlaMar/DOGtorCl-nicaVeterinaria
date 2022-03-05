@@ -5,6 +5,7 @@ import { CitaPreviaRoutingModule } from './citaPrevia-routing.module';
 import { RouterModule } from '@angular/router';
 import { Guard } from '../areasocios/guard.service';
 import { DondeEstoyModule } from '../donde-estoy/donde-estoy.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -16,7 +17,9 @@ import { DondeEstoyModule } from '../donde-estoy/donde-estoy.module';
     CommonModule,
     CitaPreviaRoutingModule,
     RouterModule,
-    DondeEstoyModule
+    DondeEstoyModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [Guard]
 })

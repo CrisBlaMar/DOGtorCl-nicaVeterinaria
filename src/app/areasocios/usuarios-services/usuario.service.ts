@@ -4,8 +4,7 @@ import { environment } from 'src/environments/environment';
 import { AuthResponse} from '../../interfaces/interfaces';
 import { Usuario } from 'src/app/interfaces/usuario.interfaces';
 import { Mascota } from '../../interfaces/mascota.interfaces';
-import { AbstractControl, AsyncValidator, ValidationErrors } from '@angular/forms';
-import { catchError, map, Observable, of } from 'rxjs';
+import { Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -57,13 +56,6 @@ export class UsuarioService {
 
 
 
- /**  getEmailUsuario(email:string){
-    const url = `${this.baseUrl}/user/${email}`;
-    return this.httpclient.get<Usuario>(url);
-  }*/
-
-
-
   /**Método para obetener del token el usuario y su email */
   getIdUsuario(){
     const url = `${this.baseUrl}/user`;
@@ -85,18 +77,26 @@ export class UsuarioService {
     const opcionHeader = new HttpHeaders()
     .set('Authorization', `Bearer ${token}`);
     return this.httpclient.get<Mascota []>(url, {headers:opcionHeader});
+    
   }
 
 
   /**Método para obtener los datos de un usuario */
-  obtenerDatosUsuario (email:string){
-    const url = `${this.baseUrl}/user/${email}`;
+  obtenerDatosUsuario (){
+    const url = `${this.baseUrl}/usuario`;
     let token = localStorage.getItem('token');
     const opcionHeader = new HttpHeaders()
     .set('Authorization', `Bearer ${token}`);
     return this.httpclient.get<Usuario>(url, {headers:opcionHeader});
   }
 
-  
+  /**Método para editar los datos de una mascota */
+  editarMascota(chip : number){
+    const url = `${this.baseUrl}/user/mascota/${chip}`;
+    let token = localStorage.getItem('token');
+    const opcionHeader = new HttpHeaders()
+    .set('Authorization', `Bearer ${token}`);
+    return this.httpclient.get<Mascota>(url, {headers:opcionHeader});
+  }
 
 }

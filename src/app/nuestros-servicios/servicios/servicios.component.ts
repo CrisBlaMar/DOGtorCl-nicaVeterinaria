@@ -3,6 +3,7 @@ import { Servicio } from '../../interfaces/servicio.interfaces';
 import { ServicioService } from './servicios.service';
 import Swal from 'sweetalert2';
 import { Subject } from 'rxjs';
+import { Tarifa } from '../../interfaces/tarifa.interfaces';
 
 @Component({
   selector: 'app-servicios',
@@ -14,8 +15,11 @@ export class ServiciosComponent implements OnDestroy, OnInit{
   constructor(private servicioService : ServicioService) { }
 
   servicios : Servicio [] = [];
+  tarifas : Tarifa [] = [];
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject<any>();
+
+  ids : number [] = [];
 
   mensajehijo: string= '';
   
@@ -30,7 +34,9 @@ export class ServiciosComponent implements OnDestroy, OnInit{
       next: (resp => {
       this.servicios = resp;
       console.log(this.servicios);
-      this.dtTrigger.next(this.servicios); 
+
+
+      this.dtTrigger.next(null); 
     }),
       error: resp => {
        Swal.fire('Error', resp.error.message, 'error')

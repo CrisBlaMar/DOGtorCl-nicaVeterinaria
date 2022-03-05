@@ -6,6 +6,7 @@ import { Guard } from './guard.service';
 import { RegistromascotaComponent } from './registromascota/registromascota.component';
 import { MimascotaComponent } from './mimascota/mimascota.component';
 import { MisdatosComponent } from './misdatos/misdatos.component';
+import { EditarMascotaComponent } from './editar-mascota/editar-mascota.component';
 
 const routes: Routes = [
   {
@@ -20,7 +21,8 @@ const routes: Routes = [
 { path:'opciones', component: OpcionesComponent, canActivate: [Guard]},
 { path:'registromascota', component: RegistromascotaComponent, canActivate: [Guard]},
 { path:'mimascota', component: MimascotaComponent, canActivate: [Guard]},
-{ path:'misdatos', component: MisdatosComponent, canActivate: [Guard]}
+{ path:'misdatos', component: MisdatosComponent, canActivate: [Guard]},
+{ path: 'editarmascota', component: EditarMascotaComponent, canActivate: [Guard]}
 
 
 

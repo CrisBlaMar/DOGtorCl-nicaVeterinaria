@@ -1,0 +1,58 @@
+<div class="formulariologin container-fluid row">
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 " >
+        <img src="../../../assets/img/gatito.png" alt="perro de raza corggie">
+    </div>
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 mt-5 divformu">
+        <h1 id="logintexto"><strong>Modificar Datos Mascota</strong></h1>
+        <form class="login" (ngSubmit)="editarDatosMascota()" >
+            <div class="form-group">
+                <label for="nombre"></label>
+                <input type="text" name="nombre" id="nombre" placeholder="   Nombre" 
+                class="form-control " [(ngModel)]="mascota.nombre" #nombre="ngModel" required/>
+                <span class="form-text text-danger" *ngIf="nombre.errors && nombre.touched"> 
+                    Debe introducir un nombre
+                </span>
+            </div><br>
+            <div class="form-group">
+                <label for="raza"></label>
+                <input type="text" name="raza" id="raza" placeholder="   Raza" 
+                class="form-control " [(ngModel)]="mascota.raza"  #raza="ngModel" required/>
+                <span class="form-text text-danger" *ngIf="raza.errors && raza.touched"> 
+                    Debe introducir una raza
+                </span>
+            </div><br>
+            <div class="form-group">
+                <label for="pelaje"></label>
+                <input type="text" name="pelaje" id="pelaje" placeholder="   Pelaje" 
+                class="form-control " [(ngModel)]="mascota.pelaje"  #pelaje="ngModel" required/>
+                <span class="form-text text-danger" *ngIf="pelaje.errors && pelaje.touched"> 
+                    Debe introducir un pelaje
+                </span>
+            </div><br>
+            <div class="form-group">
+                <label for="especie"></label>
+                <input type="text" name="especie" id="especie" placeholder="   Especie" 
+                class="form-control " [(ngModel)]="mascota.especie"  #especie="ngModel" required/>
+                <span class="form-text text-danger" *ngIf="especie.errors && especie.touched"> 
+                    Debe introducir una especie
+                </span>
+            </div><br>
+            <div class="form-group">
+                <label for="sexo"></label>
+                <input type="text" name="sexo" id="sexo" placeholder="   Sexo" 
+                class="form-control " [(ngModel)]="mascota.sexo"  #sexo="ngModel" required/>
+                <span class="form-text text-danger" *ngIf="sexo.errors && sexo.touched"> 
+                    Debe introducir un sexo
+                </span>
+            </div><br>
+            <div class="btn">
+                <button class="button">Editar datos</button>
+            </div>
+        </form><br><br>
+
+    </div>
+    
+    
+</div>
+
+

@@ -13,9 +13,9 @@
         </tr>
         </thead>
         <tbody class="tbody">
-        <tr *ngFor="let servi of servicios">
-            <td class="fondo">{{ servi.nombre }}</td>
-            <td class="fondo">{{servi.tarifas}}€</td>
+        <tr *ngFor="let servi of servicios" >
+            <td class="fondo">{{servi.nombre}}</td>
+            <td class="fondo">{{servi.tarifas[0].precio}}€</td>
             <td class="text-center fondo"><app-detalle-servicio (emitter)="eventohijo($event)"></app-detalle-servicio></td>
             
               <!--MODAL-->
@@ -28,13 +28,8 @@
                     </div>
                     <div class="modal-body">
                   <!--CONTENIDO-->
-                      <div class="container-fluid text-center">
-                        <div class="col-12">
-                            <h3><strong>{{servi.nombre}}</strong></h3>
-                            <p>{{servi.descripcion}}</p>
-                        </div>
-                      </div>      
-                    </div>
+                      <app-info-servicio info="{{servi.descripcion}}"></app-info-servicio>
+                    </div>      
                   </div>
                 </div>
               </div>

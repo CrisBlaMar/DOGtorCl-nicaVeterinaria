@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../usuarios-services/usuario.service';
-import { Usuario } from '../../interfaces/usuario.interfaces';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -22,9 +21,8 @@ export class MisdatosComponent implements OnInit {
 
   
   mostrarDatos(){
-    const email = JSON.parse(localStorage.getItem('email') || '{}');
-    console.log(email);
-    this.usuarioservice.obtenerDatosUsuario(email)
+
+    this.usuarioservice.obtenerDatosUsuario()
     .subscribe({
       next: (resp => {
       this.email = resp.email;
@@ -32,6 +30,8 @@ export class MisdatosComponent implements OnInit {
       this.nombre = resp.nombre;
       this.telefono = resp.telefono;
       this.dni= resp.dni;
+
+      console.log(this.email)
     }),
       error: resp => {
         Swal.fire('Error', resp.error.message, 'error')

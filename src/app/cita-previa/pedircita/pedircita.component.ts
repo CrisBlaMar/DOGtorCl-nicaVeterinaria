@@ -3,7 +3,9 @@ import { Mascota } from '../../interfaces/mascota.interfaces';
 import { UsuarioService } from '../../areasocios/usuarios-services/usuario.service';
 import Swal from 'sweetalert2';
 import { ServicioService } from '../../nuestros-servicios/servicios/servicios.service';
-import { Servicio } from '../../interfaces/servicio.interfaces';
+import { CitaService } from '../cita.service';
+import { Cita } from 'src/app/interfaces/cita.interfaces';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-pedircita',
@@ -12,42 +14,61 @@ import { Servicio } from '../../interfaces/servicio.interfaces';
 })
 export class PedircitaComponent implements OnInit {
 
-  constructor(private usuarioservice : UsuarioService, private servicioService : ServicioService ) { }
+  constructor(private form : FormBuilder, private usuarioservice : UsuarioService, private servicioService : ServicioService,
+    private citaservice : CitaService ) { }
 
-  mascota : Mascota [] = [];
-  servicio : Servicio [] = [];
+  mascotas : Mascota [] = [];
+  masco!: Mascota;
+  
+
+  citaPrevia: FormGroup = this.form.group({
+    fecha:[''],
+    mascota : ['']
+
+  })
+  
 
   mostrarMascotas(){
-    const email = JSON.parse(localStorage.getItem('email') || '{}');
+    
     this.usuarioservice.obtenerMascotasUsuario()
     .subscribe({
       next: (resp => {
-      this.mascota = resp;
+      this.mascotas = resp;
+
     }),
       error: resp => {
         Swal.fire('Error', resp.error.message, 'error')
         
       }
   });
+  }
+ 
+
+
+
+
+  realizarCita(){
+    let fecha: Date = this.citaPrevia.value.fecha.replace("T"," ");
+    let cita : Cita = { "fecha": fecha};
+    console.log(cita)
+    this.citaservice.realizarCitaPrevia(cita, this.citaPrevia.value.mascota)
+    .subscribe({
+      next:  (resp=>{
+        this.citaPrevia.reset();
+      })
+    });
+    
   }
 
-  mostrarServicios(){
-    this.servicioService.obtenerServicios()
-    .subscribe({
-      next: (resp => {
-      this.servicio = resp; //en servicios guardamos la respuesta que queremos mostrar
-    }),
-      error: resp => {
-        Swal.fire('Error', resp.error.message, 'error')
-        
-      }
-  });
-  }
+
+
+
+
+
 
   ngOnInit(): void {
     //Recordar SIEMPRE llamar aquí al método para que nos cargue los datos al cargar la página
     this.mostrarMascotas();
-    this.mostrarServicios();
   }
 
 }

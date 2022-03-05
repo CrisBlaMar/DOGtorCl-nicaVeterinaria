@@ -1,7 +1,21 @@
+<div *ngIf="mascota.length == 0" >
+    <div class="nohaymascota mt-5 mb-5">
+        <pre class="text-center">Ups! Parece que de momento 
+no tienes ninguna mascota registrada</pre>
+        <h3 class="text-center">¿Quieres registrar a tu pequeño amigo?</h3>
+        <div class="boton">
+            <button class="btn mt-4 mb-4" type="button" >REGISTRAR NUEVA MASCOTA</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+
 <div class="container row" >
-    
-    <div class="card text-center col-3 mt-2" *ngFor="let pet of mascota">
-        <img src="../../../assets/img/galeria6.jpeg" class="card-img-top" alt="...">
+    <div class="card text-center col-lg-3 col-md-6 col-sm-12 col-xs-12 mt-2 m-2" *ngFor="let pet of mascota">
+        <img src="../../../assets/img/mimascotapng.png" class="card-img-top" alt="...">
         <div class="card-body">
             <p class="card-title">{{pet.nombre}}</p>
             <p class="card-text">{{pet.raza}}</p>
@@ -18,4 +32,8 @@
 
 <div class="boton">
     <button class="btn mt-4 mb-4" type="button" routerLink="/areasocios/opciones">Regresar a Opciones</button>
+</div>
+
+<div class="boton">
+    <button class="btn mt-4 mb-4" type="button" routerLink="/areasocios/editarmascota">Editar mascota</button>
 </div>

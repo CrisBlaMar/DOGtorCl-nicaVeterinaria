@@ -22,3 +22,18 @@
     text-align: center;
 
 }
+.nohaymascota{
+    background-color: #E9BB97;
+    width: 60%;
+    margin: auto;
+    border-radius: 30px;
+}
+pre{
+    font-size: 28px;
+    font-family: cocogose;
+}
+.card{
+    border-radius: 30px;
+    background-color: #E9BB97;
+}
+

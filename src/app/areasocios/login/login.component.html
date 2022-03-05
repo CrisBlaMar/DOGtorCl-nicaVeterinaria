@@ -10,11 +10,19 @@
         <form class="login" (ngSubmit)="login()">
             <div class="form-group">
                 <label for="email"><i class="fa fa-envelope"></i></label>
-                <input type="text" name="email" id="email" placeholder="   Email" [(ngModel)]="email" />
+                <input type="text" name="email" id="email" placeholder="   Email" 
+                class="form-control " [(ngModel)]="usuario.email" #email="ngModel" required/>
+                <span class="form-text text-danger" *ngIf="email.errors && email.touched"> 
+                    Debe introducir un correo de usuario 
+                </span>
             </div><br>
             <div class="form-group">
                 <label for="contrasenia"><i class="fa fa-lock" aria-hidden="true"></i></label>
-                <input type="password" name="contrasenia" id="contrasenia" placeholder="   Contraseña" [(ngModel)]="contrasenia" />
+                <input type="password" name="contrasenia" id="contrasenia" placeholder="   Contraseña" 
+                class="form-control " [(ngModel)]="usuario.contrasenia"  #contrasenia="ngModel" required/>
+                <span class="form-text text-danger" *ngIf="contrasenia.errors && contrasenia.touched"> 
+                    Debe introducir una contraseña
+                </span>
             </div><br>
             <div class="btn">
                 <button class="button">Acceder</button>

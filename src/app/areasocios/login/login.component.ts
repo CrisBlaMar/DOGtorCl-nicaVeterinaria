@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsuarioService } from '../usuarios-services/usuario.service';
 import Swal from 'sweetalert2';
-import { Usuario } from '../../interfaces/usuario.interfaces';
+import { Usuario } from 'src/app/interfaces/usuario.interfaces';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -12,25 +13,25 @@ import { Usuario } from '../../interfaces/usuario.interfaces';
 })
 export class LoginComponent implements OnInit {
   
-  email : string = '';
-  contrasenia : string = '';
-  mostrar: boolean =false;
+  
   constructor(private usuarioservice : UsuarioService,
     private router : Router) { }
+  
 
-    /** 
-  usuario: Usuario = {
+
+  usuario = {
     nombre: '',
     contrasenia: '',
     apellidos: '',
     dni: '',
     telefono:'',
     email: '',
-  };*/
+  };
+
 
 
   login() {
-    this.usuarioservice.login( this.email, this.contrasenia )
+    this.usuarioservice.login( this.usuario.email, this.usuario.contrasenia )
     .subscribe({
         next: (resp => {
           
@@ -41,7 +42,6 @@ export class LoginComponent implements OnInit {
       }),
         error: resp => {
           console.log(resp);
-          this.mostrar= true;
           Swal.fire('Error', resp.error.message, 'error')
 
         }

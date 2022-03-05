@@ -7,12 +7,14 @@ import { DataTablesModule } from 'angular-datatables';
 import { DetalleServicioComponent } from './detalle-servicio/detalle-servicio.component';
 import { RouterModule } from '@angular/router';
 import { DondeEstoyModule } from '../donde-estoy/donde-estoy.module';
+import { InfoServicioComponent } from './info-servicio/info-servicio.component';
 
 
 @NgModule({
   declarations: [
     ServiciosComponent,
-    DetalleServicioComponent
+    DetalleServicioComponent,
+    InfoServicioComponent
   ],
   imports: [
     CommonModule,

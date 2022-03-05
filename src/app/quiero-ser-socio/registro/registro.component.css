@@ -1,22 +1,23 @@
 .formulariologin{
     width: 60%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding-top: 100px;
-    padding-bottom: 100px;
+    margin: auto;
     text-align: center;
    /** background-color: #D3B094;*/
     border-radius: 20px;
     color: white;
-    background-image: url("../../../assets/img/perrorecorte.jpeg");
     background-size: cover;
+    background-color: #FAE4CF;
 
 }
 input{
     border-top: none;
     border-right: none;
     border-left: none;
-    background-color: rgba(255, 255, 255, 0.555) ;
+    background-color: #FAE4CF;
+    border-color: #5E5E34;
+}
+#logintexto, p{
+    color: #5E5E34;
 }
 button{
     background-color: #c98c47;
@@ -26,12 +27,12 @@ button:hover{
     background-color: #925c1f;
     border-color: #925c1f;
 }
-#logintexto{
-    background-color: rgba(224, 181, 125, 0.397) ;
-}
 span{
-    background-color: rgba(255, 255, 255, 0.555);
-    font-size:20px;
+
+    font-size:13px;
+}
+img{
+    width: 70%;
 }
 
 
