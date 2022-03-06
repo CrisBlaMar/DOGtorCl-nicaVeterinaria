@@ -13,15 +13,14 @@ export class ServicioService {
 
   private baseUrl: string = environment.baseUrl;
 
+  /**
+   * Petición para obtener los servicios de la clínica
+   * @returns 
+   */
   obtenerServicios(){
     const url = `${this.baseUrl}/servicio`;
     return this.httpclient.get<Servicio[]>(url);
     //Servicio es un array de servicios
   }
 
-  obtenerTarifaDeServicio(referencia: number){
-    const url = `${this.baseUrl}/servicio/${referencia}/tarifa`;
-    return this.httpclient.get<Tarifa []>(url);
-  }
-  
 }

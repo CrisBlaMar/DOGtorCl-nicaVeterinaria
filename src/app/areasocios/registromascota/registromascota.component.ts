@@ -28,7 +28,10 @@ export class RegistromascotaComponent implements OnInit {
 
 
   
-
+/**
+ * Método para hacer el registro de una mascota
+ * Añadir una mascota a un usuario
+ */
   hacerRegistro (){
     
     let mascota : Mascota = this.miMascota.value;

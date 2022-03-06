@@ -16,6 +16,9 @@ export class MimascotaComponent implements OnInit {
   mascota : Mascota [] = [];
   
 
+  /**
+   * Método para mostrar las mascotas de un usuario
+   */
   mostrarMascotas(){
     
     this.usuarioservice.obtenerMascotasUsuario()

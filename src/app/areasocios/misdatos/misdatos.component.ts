@@ -12,7 +12,11 @@ export class MisdatosComponent implements OnInit {
   constructor(private usuarioservice : UsuarioService) { }
 
   mensajehijo: string= '';
-  
+  /**
+   * Para mostrar el mensaje del componenete hijo del que 
+   * sacamos el mensaje
+   * @param mensaje , que vamos a recibir
+   */
   eventohijo(mensaje: string){
     this.mensajehijo = mensaje;
   }
@@ -24,7 +28,9 @@ export class MisdatosComponent implements OnInit {
   telefono: string ='';
   dni: string ='';
 
-  
+  /**
+   * Método para mostrar los datos del usuario
+   */
   mostrarDatos(){
 
     this.usuarioservice.obtenerDatosUsuario()

@@ -40,8 +40,8 @@ button {
     font-family: cocogose;
     }
 button:hover{
-    background-color: #925c1f;
-    border-color: #925c1f;
+    -webkit-transform:scale(1.1);transform:scale(1.1);
+    background-color: #44522b;
 }
 #logintexto{
     color: #5E5E34;

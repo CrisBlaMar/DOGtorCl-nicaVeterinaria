@@ -13,6 +13,12 @@ import { Cita } from '../interfaces/cita.interfaces';
     private baseUrl: string = environment.baseUrl;
 
 
+    /**
+     * Método para realizar una cita previa
+     * @param cita , la cita que vamos a pedir
+     * @param chip , el chip de la mascota a la que le vamos a pedir la cita
+     * @returns 
+     */
     realizarCitaPrevia (cita : Cita, chip: number){
         const url = `${this.baseUrl}/user/cita/mascota/${chip}`;
         const body =  cita;

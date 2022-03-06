@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import Swal from 'sweetalert2';
 import { EmailService } from './email.service';
 
 @Component({
@@ -18,13 +19,20 @@ export class FormucontactoComponent implements OnInit {
   })
 
 
+  /**
+   * Método para enviar un mensaje
+   */
   enviarmensaje(){
     this.emailservice.enviarMensaje(this.mensaje.value)
     .subscribe({
       next: (resp =>{
         this.mensaje.reset();
         console.log(this.mensaje)
-      })
+      }),
+      error: resp => {
+        Swal.fire('Error', resp.error.message, 'error')
+        
+      }
     })
   }
 

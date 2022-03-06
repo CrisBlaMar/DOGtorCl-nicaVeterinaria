@@ -28,6 +28,10 @@ export class PedircitaComponent implements OnInit {
   })
   
 
+  /**
+   * Método para mostrar las mascotas de un usuario y así poder seleccionar
+   * a que mascota queremos pedirle la cita
+   */
   mostrarMascotas(){
     
     this.usuarioservice.obtenerMascotasUsuario()
@@ -46,7 +50,9 @@ export class PedircitaComponent implements OnInit {
 
 
 
-
+/**
+ * Método para realizar una cita previa
+ */
   realizarCita(){
     let fecha: Date = this.citaPrevia.value.fecha.replace("T"," ");
     let cita : Cita = { "fecha": fecha};
@@ -56,6 +62,11 @@ export class PedircitaComponent implements OnInit {
       next:  (resp=>{
         this.citaPrevia.reset();
       })
+      ,
+      error: resp => {
+        Swal.fire('Error', resp.error.message, 'error')
+        
+      }
     });
     
   }

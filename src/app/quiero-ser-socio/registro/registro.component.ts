@@ -24,7 +24,9 @@ export class RegistroComponent implements OnInit {
     dni:['', [ Validators.required, Validators.pattern('[0-9]{8}[A-Za-z]{1}') ]]
   })
 
-  
+  /**
+   * Método para un registro de un nuevo usuario 
+   */
   hacerRegistro (){
     let usuario : Usuario = this.miFormulario.value;
     this.usuarioservice.registro(usuario)

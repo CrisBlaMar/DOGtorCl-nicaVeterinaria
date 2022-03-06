@@ -11,6 +11,13 @@ export class Guard implements CanActivate{
 
     
 
+    /**
+     * Método con el que controlamos el acceso de los usuarios a nuestra página web
+     * donde los usuarios logueados podrán acceder a ciestar partes y los no logueados no podrán
+     * @param route 
+     * @param state 
+     * @returns 
+     */
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | Observable<boolean> | any {
         let acceso = false;
         return this.usuarioservice.validarToken()

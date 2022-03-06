@@ -59,6 +59,11 @@ img{
   font-family: cocogose;
   }
 
+  .button:hover{
+    -webkit-transform:scale(1.1);transform:scale(1.1);
+    background-color: #5e5e34;
+  }
+
 
 /*móviles*/
 @media screen and (min-width: 300px) and (max-width: 698px){

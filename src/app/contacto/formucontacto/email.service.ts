@@ -16,6 +16,11 @@ export class EmailService {
     private baseUrl: string = environment.baseUrl;
 
 
+    /**
+     * Petición para enviar un correo electrónico
+     * @param mensaje , que vamos a enviar
+     * @returns 
+     */
     enviarMensaje(mensaje : Email){
         const url = `${this.baseUrl}/enviaremail`;
         const body = mensaje;

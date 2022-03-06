@@ -7,6 +7,9 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class UbicacionComponent implements OnInit {
 
+  /**
+   * Que vamos a usar para mostrar en cada página donde se encuentra el usuario en cada momento
+   */
   @Input() info : string= '';
 
 

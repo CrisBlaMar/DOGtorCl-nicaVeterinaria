@@ -24,8 +24,8 @@ button{
     border-color: #c98c47;
 }
 button:hover{
-    background-color: #925c1f;
-    border-color: #925c1f;
+    -webkit-transform:scale(1.1);transform:scale(1.1);
+    background-color: #44522b;
 }
 span{
 

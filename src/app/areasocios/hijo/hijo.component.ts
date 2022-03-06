@@ -14,6 +14,10 @@ export class HijoComponent implements OnInit {
   
   email: string = JSON.parse(localStorage.getItem('email') || '{}');
 
+  /**
+   * Método para usar output y mostrar un mensaje en un modal 
+   * que se encuentra en el componente padre
+   */
   masInfo(){
     this.emitter.emit("¡Hola, " + this.email + "! Aquí puedes modificar tus datos") ;
   }

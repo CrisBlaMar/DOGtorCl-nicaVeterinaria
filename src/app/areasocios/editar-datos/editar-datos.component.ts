@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Usuario } from 'src/app/interfaces/usuario.interfaces';
+import Swal from 'sweetalert2';
 import { EditarDatosService } from './editar-datos.service';
 
 @Component({
@@ -30,6 +31,11 @@ export class EditarDatosComponent implements OnInit {
         this.miFormulario.reset();
         location.reload();
       })
+      ,
+      error: resp => {
+        Swal.fire('Error', resp.error.message, 'error')
+        
+      }
     })
 
   }

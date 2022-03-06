@@ -13,6 +13,9 @@
 .redesSociales{
     width: 15px;
 }
+.redesSociales:hover{
+  -webkit-transform:scale(1.3);transform:scale(1.3);
+}
 .active{
   background-color: #E9BB97;
 }

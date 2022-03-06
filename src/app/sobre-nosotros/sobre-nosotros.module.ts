@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SobreNosotrosRoutingModule } from './sobreNosotros-routing.module';
 import { SobreNosotrosComponent } from './sobre-nosotros.component';
 import { DondeEstoyModule } from '../donde-estoy/donde-estoy.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -13,7 +14,8 @@ import { DondeEstoyModule } from '../donde-estoy/donde-estoy.module';
   imports: [
     CommonModule,
     SobreNosotrosRoutingModule,
-    DondeEstoyModule
+    DondeEstoyModule,
+    RouterModule
   ]
 })
 export class SobreNosotrosModule { }

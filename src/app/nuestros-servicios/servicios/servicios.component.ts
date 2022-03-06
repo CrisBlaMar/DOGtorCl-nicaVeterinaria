@@ -27,7 +27,9 @@ export class ServiciosComponent implements OnDestroy, OnInit{
     this.mensajehijo = mensaje;
   }
 
-
+/**
+ * Método para mostrar los servicios
+ */
   mostrarServicios(){
     this.servicioService.obtenerServicios()
     .subscribe({
