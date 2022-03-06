@@ -11,11 +11,7 @@
     </div>
 
     <div class="datos">
-        <!--<p class="mt-2">Nombre: <span>{{nombre}}</span></p>
-        <p>Apellidos: <span>{{apellidos}}</span></p>
-        <p>DNI: <span>{{dni}}</span></p>
-        <p>Teléfono:  <span>{{telefono}}</span></p>
-        <p>Email: <span>{{email}}</span></p>-->
+
         <div class="table-responsive mt-3">
             <table class="table table-borderless">
                 <tr>
@@ -42,4 +38,24 @@
         </div>
     </div>
 
+</div>
+
+
+<div class="text-center mb-5">
+    <app-hijo (emitter)="eventohijo($event)"></app-hijo>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" 
+                aria-labelledby="exampleModalLabel" aria-hidden="true" >
+    <div class="modal-dialog" style="width: 28%;" >
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="text-center">{{mensajehijo}}</h4>
+            </div>
+            <div class="modal-body">
+                <app-editar-datos></app-editar-datos>
+            </div>      
+        </div>
+    </div>
 </div>

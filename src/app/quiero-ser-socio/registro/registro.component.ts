@@ -35,7 +35,6 @@ export class RegistroComponent implements OnInit {
         this.miFormulario.reset();
         Swal.fire({
           title: '¡Enhorabuena! Ya formas parte de nuestra manada :)',
-          background: 'url(../../../assets/img/perrorecorte.jpeg)',
           icon: 'success',
           showCancelButton: true,
           confirmButtonText: `Iniciar Sesión`,

@@ -28,3 +28,9 @@ td{
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
+.modal {
+    background-color: #fae4cf5d;
+}
+.modal-content{
+    background-color: #fae4cf;
+}

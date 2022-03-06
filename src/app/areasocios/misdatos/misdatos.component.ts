@@ -11,6 +11,11 @@ export class MisdatosComponent implements OnInit {
 
   constructor(private usuarioservice : UsuarioService) { }
 
+  mensajehijo: string= '';
+  
+  eventohijo(mensaje: string){
+    this.mensajehijo = mensaje;
+  }
   
 
   nombre: string ='';

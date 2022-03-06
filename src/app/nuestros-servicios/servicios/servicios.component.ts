@@ -52,7 +52,10 @@ export class ServiciosComponent implements OnDestroy, OnInit{
      this.dtOptions = {
         pagingType: 'full_numbers',
         lengthMenu: [5, 10, 100], //al ponerlo aquí nunca funciona, tengo que añadirlo en el html
-        processing: true
+        processing: true,
+        language: {
+          url: 'http://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json'
+          }
       };
   }
 

@@ -10,7 +10,8 @@ import { MimascotaComponent } from './mimascota/mimascota.component';
 import { RegistromascotaComponent } from './registromascota/registromascota.component';
 import { MisdatosComponent } from './misdatos/misdatos.component';
 import { DondeEstoyModule } from '../donde-estoy/donde-estoy.module';
-import { EditarMascotaComponent } from './editar-mascota/editar-mascota.component';
+import { EditarDatosComponent } from './editar-datos/editar-datos.component';
+import { HijoComponent } from './hijo/hijo.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { EditarMascotaComponent } from './editar-mascota/editar-mascota.componen
     MimascotaComponent,
     RegistromascotaComponent,
     MisdatosComponent,
-    EditarMascotaComponent
+    EditarDatosComponent,
+    HijoComponent
   ],
   imports: [
     CommonModule,

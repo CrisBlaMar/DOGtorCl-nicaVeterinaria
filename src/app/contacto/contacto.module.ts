@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormucontactoComponent } from './formucontacto/formucontacto.component';
 import { ContactoRoutingModule } from './contacto-routing.module';
 import { DondeEstoyModule } from '../donde-estoy/donde-estoy.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -13,7 +14,9 @@ import { DondeEstoyModule } from '../donde-estoy/donde-estoy.module';
   imports: [
     CommonModule,
     ContactoRoutingModule,
-    DondeEstoyModule
+    DondeEstoyModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class ContactoModule { }

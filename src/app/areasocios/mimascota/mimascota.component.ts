@@ -22,7 +22,6 @@ export class MimascotaComponent implements OnInit {
     .subscribe({
       next: (resp => {
       this.mascota = resp;
-      console.log(resp)
       
     }),
       error: resp => {

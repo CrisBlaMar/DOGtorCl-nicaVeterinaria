@@ -1,0 +1,43 @@
+.formulariocita{
+    width: 60%;
+    height: 30%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 90px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    border-radius: 20px;
+    color: white;
+    background-color: #e9bb97;
+    background-size: cover;
+
+}
+input, textarea{
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    background-color: #CC9973;
+    color: #ffffff;
+    border-color: white;
+}
+::placeholder { 
+  color: rgb(255, 255, 255); 
+}
+.button {
+    min-width: 150px;
+    min-height: 50px;
+    font-size: 20px;
+    letter-spacing: 4px;
+    font-weight: 600;
+    color: #ffffff;
+    background: #858062;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: cocogose;
+    }
+    img{
+        margin-top: 35%;
+          width: 100%;
+      }

@@ -1,0 +1,36 @@
+.formulariologin{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+   /** background-color: #D3B094;*/
+    border-radius: 20px;
+    color: rgb(68, 88, 29);
+    background-size: cover;
+    background-color: #FAE4CF;
+
+}
+input{
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    background-color: #FAE4CF;
+    border-color: #5E5E34;
+}
+#logintexto, p{
+    color: #5E5E34;
+}
+button{
+    background-color: #c98c47;
+    border-color: #c98c47;
+}
+button:hover{
+    background-color: #925c1f;
+    border-color: #925c1f;
+}
+span{
+
+    font-size:13px;
+}
+img{
+    width: 70%;
+}
