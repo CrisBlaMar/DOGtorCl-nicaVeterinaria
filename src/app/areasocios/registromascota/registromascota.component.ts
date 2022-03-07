@@ -43,6 +43,8 @@ export class RegistromascotaComponent implements OnInit {
           title: 'Tu mascota ha sido registrada :)',
           icon: 'success',
           showDenyButton: true,
+          confirmButtonColor: '#E9BB97',
+          denyButtonColor: '#999966',
           confirmButtonText: 'Volver a Opciones',
           denyButtonText: `Registrar otra mascota`,
         }).then((result) => {

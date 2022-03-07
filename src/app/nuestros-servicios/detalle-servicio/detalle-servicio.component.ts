@@ -16,7 +16,6 @@ export class DetalleServicioComponent implements OnInit {
   email: string = JSON.parse(localStorage.getItem('email') || '{}');
 
   masInfo(){
-    console.log(this.email);
     if(localStorage.getItem('token') == undefined){
       this.emitter.emit("¡Hola!, aquí tienes más info") ;
     }else{

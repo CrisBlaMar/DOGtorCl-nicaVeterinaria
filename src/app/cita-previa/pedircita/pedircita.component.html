@@ -8,7 +8,7 @@
         <p>Rellena los siguientes campos</p>
         <form class="citaprevia" [formGroup]="citaPrevia" (ngSubmit)="realizarCita()" >
             <div class="form-group">
-                <label for="mascota" class="text-white"><i class="fa fa-paw" aria-hidden="true"></i> Selecciona para quién quieres la cita:</label><br><br>
+                <label for="mascota" class="text-white"><i class="fa fa-paw" aria-hidden="true"></i> Selecciona tu mascota:</label><br><br>
                 <select name="mascota" formControlName="mascota">
                     <option value={{pet.chip}} *ngFor="let pet of mascotas">{{pet.nombre}}</option> 
                 </select>

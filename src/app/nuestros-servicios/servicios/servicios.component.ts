@@ -35,7 +35,6 @@ export class ServiciosComponent implements OnDestroy, OnInit{
     .subscribe({
       next: (resp => {
       this.servicios = resp;
-      console.log(this.servicios);
 
 
       this.dtTrigger.next(null); 

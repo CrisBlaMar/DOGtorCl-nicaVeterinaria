@@ -12,6 +12,7 @@ import { MisdatosComponent } from './misdatos/misdatos.component';
 import { DondeEstoyModule } from '../donde-estoy/donde-estoy.module';
 import { EditarDatosComponent } from './editar-datos/editar-datos.component';
 import { HijoComponent } from './hijo/hijo.component';
+import { MisCitasComponent } from './mis-citas/mis-citas.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { HijoComponent } from './hijo/hijo.component';
     RegistromascotaComponent,
     MisdatosComponent,
     EditarDatosComponent,
-    HijoComponent
+    HijoComponent,
+    MisCitasComponent
   ],
   imports: [
     CommonModule,

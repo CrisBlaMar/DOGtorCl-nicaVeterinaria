@@ -1,17 +1,32 @@
 .formulariocita{
     width: 60%;
-    height: 30%;
+    height: 20%;
     margin: auto;
-    margin-top: 10px;
-    margin-bottom: 90px;
+    margin-bottom: 30px;
+    text-align: center;
+    border-radius: 20px;
     padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    background-color: #e9bb97;
+    background-size: cover;
+
+}
+.iconos{
+    font-size: 7px;
+    color: #44522b;
+}
+.formulario{
+    width: 60%;
+    height: 20%;
+    margin: auto;
+    margin-bottom: 90px;
     padding-bottom: 10px;
     text-align: center;
     border-radius: 20px;
     color: white;
     background-color: #e9bb97;
-    background-size: cover;
-
+    background-size: cover; 
 }
 input, textarea{
     border-top: none;
@@ -41,7 +56,13 @@ input, textarea{
     -webkit-transform:scale(1.1);transform:scale(1.1);
     background-color: #44522b;
 }
-    img{
-        margin-top: 35%;
-          width: 100%;
-      }
+.cartero{
+    margin-top: 35%;
+        width: 100%;
+    }
+.mapa{
+    width: 90%;
+}
+pre{
+    font-family: lemonmilk;
+}

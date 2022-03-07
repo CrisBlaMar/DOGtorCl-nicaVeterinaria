@@ -10,6 +10,7 @@ import { EditarDatosService } from './editar-datos.service';
   styleUrls: ['./editar-datos.component.css']
 })
 export class EditarDatosComponent implements OnInit {
+  usuarioservice: any;
 
   constructor(private editardatosservice : EditarDatosService, private form : FormBuilder) { }
 
@@ -40,7 +41,37 @@ export class EditarDatosComponent implements OnInit {
 
   }
 
+
+  nombre: string ='';
+  apellidos: string ='';
+  email: string ='';
+  telefono: string ='';
+  dni: string ='';
+
+  /**
+   * Método para mostrar los datos del usuario
+   */
+   mostrarDatos(){
+
+    this.usuarioservice.obtenerDatosUsuario()
+    .subscribe({
+      next: ((resp: { email: string; apellidos: string; nombre: string; telefono: string; dni: string; }) => {
+      this.email = resp.email;
+      this.apellidos = resp.apellidos;
+      this.nombre = resp.nombre;
+      this.telefono = resp.telefono;
+      this.dni= resp.dni;
+
+    }),
+      error: (resp: { error: { message: string | undefined; }; }) => {
+        Swal.fire('Error', resp.error.message, 'error')
+        
+      }
+  });
+  }
+
   ngOnInit(): void {
+    this.mostrarDatos();
   }
 
 }

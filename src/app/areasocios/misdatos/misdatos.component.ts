@@ -42,7 +42,6 @@ export class MisdatosComponent implements OnInit {
       this.telefono = resp.telefono;
       this.dni= resp.dni;
 
-      console.log(this.email)
     }),
       error: resp => {
         Swal.fire('Error', resp.error.message, 'error')

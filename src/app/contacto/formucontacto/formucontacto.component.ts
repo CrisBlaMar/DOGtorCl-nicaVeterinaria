@@ -12,8 +12,9 @@ export class FormucontactoComponent implements OnInit {
 
   constructor(private emailservice : EmailService, private form : FormBuilder) { }
   email = localStorage.getItem("email");
+  
   mensaje: FormGroup = this.form.group({
-    to: ["crisblancomartin96@gmail.com"],
+    to: ['crisblanco96@gmail.com'],
     subject: [],
     text : []  
   })
@@ -27,7 +28,10 @@ export class FormucontactoComponent implements OnInit {
     .subscribe({
       next: (resp =>{
         this.mensaje.reset();
-        console.log(this.mensaje)
+        Swal.fire({
+          title: '¡Su correo ha sido enviado!',
+          icon: 'success'
+        })
       }),
       error: resp => {
         Swal.fire('Error', resp.error.message, 'error')

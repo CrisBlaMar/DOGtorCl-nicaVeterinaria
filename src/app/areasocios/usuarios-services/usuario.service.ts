@@ -5,6 +5,7 @@ import { AuthResponse} from '../../interfaces/interfaces';
 import { Usuario } from 'src/app/interfaces/usuario.interfaces';
 import { Mascota } from '../../interfaces/mascota.interfaces';
 import { Observable} from 'rxjs';
+import { Cita, Citas } from 'src/app/interfaces/cita.interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -97,6 +98,15 @@ export class UsuarioService {
     const opcionHeader = new HttpHeaders()
     .set('Authorization', `Bearer ${token}`);
     return this.httpclient.get<Mascota>(url, {headers:opcionHeader});
+  }
+
+  /**Método para obtener todas las citas de un usuario */
+  obtenerCitasUsuario(){
+    const url = `${this.baseUrl}/user/cita`;
+    let token = localStorage.getItem('token');
+    const opcionHeader = new HttpHeaders()
+    .set('Authorization', `Bearer ${token}`);
+    return this.httpclient.get<Citas []>(url, {headers:opcionHeader});
   }
 
 }

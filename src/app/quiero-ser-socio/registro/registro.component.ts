@@ -39,6 +39,7 @@ export class RegistroComponent implements OnInit {
           title: '¡Enhorabuena! Ya formas parte de nuestra manada :)',
           icon: 'success',
           showCancelButton: true,
+          confirmButtonColor: '#999966',
           confirmButtonText: `Iniciar Sesión`,
         }).then((result) => {
           if (result.isConfirmed) {
@@ -47,7 +48,6 @@ export class RegistroComponent implements OnInit {
         })
       }),
       error : err => {
-        console.log(err);
         Swal.fire({
           title: '¡ERROR!',
           text: 'No ha podido registrarse',

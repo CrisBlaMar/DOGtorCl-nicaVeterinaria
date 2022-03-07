@@ -7,6 +7,7 @@ import { RegistromascotaComponent } from './registromascota/registromascota.comp
 import { MimascotaComponent } from './mimascota/mimascota.component';
 import { MisdatosComponent } from './misdatos/misdatos.component';
 import { EditarDatosComponent } from './editar-datos/editar-datos.component';
+import { MisCitasComponent } from './mis-citas/mis-citas.component';
 
 const routes: Routes = [
   {
@@ -22,7 +23,8 @@ const routes: Routes = [
 { path:'registromascota', component: RegistromascotaComponent, canActivate: [Guard]},
 { path:'mimascota', component: MimascotaComponent, canActivate: [Guard]},
 { path:'misdatos', component: MisdatosComponent, canActivate: [Guard]},
-{ path:'editardatos', component:EditarDatosComponent, canActivate: [Guard]}
+{ path:'editardatos', component:EditarDatosComponent, canActivate: [Guard]},
+{ path: 'miscitas', component:MisCitasComponent, canActivate: [Guard]}
 
 
 

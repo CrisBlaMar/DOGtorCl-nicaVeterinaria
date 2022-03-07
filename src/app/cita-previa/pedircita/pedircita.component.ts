@@ -22,8 +22,8 @@ export class PedircitaComponent implements OnInit {
   
 
   citaPrevia: FormGroup = this.form.group({
-    fecha:[''],
-    mascota : ['']
+    fecha:[],
+    mascota : []
 
   })
   
@@ -56,15 +56,19 @@ export class PedircitaComponent implements OnInit {
   realizarCita(){
     let fecha: Date = this.citaPrevia.value.fecha.replace("T"," ");
     let cita : Cita = { "fecha": fecha};
-    console.log(cita)
     this.citaservice.realizarCitaPrevia(cita, this.citaPrevia.value.mascota)
     .subscribe({
       next:  (resp=>{
         this.citaPrevia.reset();
+        Swal.fire({
+          title: '¡Su cita ha sido registrada satisfactoriamente!',
+          icon: 'success'
+        })
       })
       ,
       error: resp => {
-        Swal.fire('Error', resp.error.message, 'error')
+        console.log(resp);
+        Swal.fire('Error', resp.error.message, 'error');
         
       }
     });
