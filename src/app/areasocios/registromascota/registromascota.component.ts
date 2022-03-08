@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Mascota } from '../../interfaces/mascota.interfaces';
 import { UsuarioService } from '../usuarios-services/usuario.service';
 import Swal from 'sweetalert2';
@@ -19,11 +19,11 @@ export class RegistromascotaComponent implements OnInit {
   }
 
   miMascota: FormGroup = this.form.group({
-    especie: [],
-    nombre: [],
-    pelaje: [],
-    raza: [],
-    sexo: []
+    especie: ['',[Validators.required, Validators.pattern('^[A-Za-z ]+$')]],
+    nombre: ['',[Validators.required, Validators.pattern('^[A-Za-z ]+$')]],
+    pelaje: ['',[Validators.required, Validators.pattern('^[A-Za-z ]+$')]],
+    raza: ['',[Validators.required, Validators.pattern('^[A-Za-z ]+$')]],
+    sexo: ['',[Validators.required, Validators.pattern('^[A-Za-z ]+$')]]
   })
 
 

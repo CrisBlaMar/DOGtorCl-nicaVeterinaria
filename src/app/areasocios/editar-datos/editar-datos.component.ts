@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Usuario } from 'src/app/interfaces/usuario.interfaces';
 import Swal from 'sweetalert2';
 import { EditarDatosService } from './editar-datos.service';
+import { UsuarioService } from '../usuarios-services/usuario.service';
 
 @Component({
   selector: 'app-editar-datos',
@@ -10,9 +11,10 @@ import { EditarDatosService } from './editar-datos.service';
   styleUrls: ['./editar-datos.component.css']
 })
 export class EditarDatosComponent implements OnInit {
-  usuarioservice: any;
 
-  constructor(private editardatosservice : EditarDatosService, private form : FormBuilder) { }
+  carga : boolean = false;
+
+  constructor(private editardatosservice : EditarDatosService, private form : FormBuilder, private usuarioservice : UsuarioService) { }
 
   miFormulario: FormGroup = this.form.group({
     nombre: ['',[Validators.required, Validators.pattern('^[A-Za-z ]+$')]],
@@ -61,6 +63,7 @@ export class EditarDatosComponent implements OnInit {
       this.nombre = resp.nombre;
       this.telefono = resp.telefono;
       this.dni= resp.dni;
+      this.carga = true;
 
     }),
       error: (resp: { error: { mensaje: string | undefined; }; }) => {

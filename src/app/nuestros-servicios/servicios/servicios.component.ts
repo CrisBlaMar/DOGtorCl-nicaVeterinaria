@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Servicio } from '../../interfaces/servicio.interfaces';
 import { ServicioService } from './servicios.service';
 import Swal from 'sweetalert2';
@@ -18,14 +18,6 @@ export class ServiciosComponent implements OnDestroy, OnInit{
   tarifas : Tarifa [] = [];
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject<any>();
-
-  ids : number [] = [];
-
-  mensajehijo: string= '';
-  
-  eventohijo(mensaje: string){
-    this.mensajehijo = mensaje;
-  }
 
 /**
  * Método para mostrar los servicios

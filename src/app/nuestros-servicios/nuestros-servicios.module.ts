@@ -4,17 +4,13 @@ import { ServiciosComponent } from './servicios/servicios.component';
 import { NuestrosServiciosRoutingModule } from '../nuestros-servicios/nuestrosServicios-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { DataTablesModule } from 'angular-datatables';
-import { DetalleServicioComponent } from './detalle-servicio/detalle-servicio.component';
 import { RouterModule } from '@angular/router';
 import { DondeEstoyModule } from '../donde-estoy/donde-estoy.module';
-import { InfoServicioComponent } from './info-servicio/info-servicio.component';
 
 
 @NgModule({
   declarations: [
-    ServiciosComponent,
-    DetalleServicioComponent,
-    InfoServicioComponent
+    ServiciosComponent
   ],
   imports: [
     CommonModule,

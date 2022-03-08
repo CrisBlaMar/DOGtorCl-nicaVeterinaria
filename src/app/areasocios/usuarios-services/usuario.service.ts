@@ -23,7 +23,6 @@ export class UsuarioService {
     const opcionHeader = new HttpHeaders();
     opcionHeader.append('Access-Control-Allow-Origin','*');
     return this.httpclient.post<AuthResponse>(url, body, {headers:opcionHeader}); 
-    //poner también en el registrer
   }
 
 
@@ -57,7 +56,7 @@ export class UsuarioService {
 
 
 
-  /**Método para obetener del token el usuario y su email */
+  /**Método para obtener del token el usuario y su email */
   getIdUsuario(){
     const url = `${this.baseUrl}/user`;
     let token = localStorage.getItem("token")

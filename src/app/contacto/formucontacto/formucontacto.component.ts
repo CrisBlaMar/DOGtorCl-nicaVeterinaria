@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { EmailService } from './email.service';
 
@@ -15,8 +15,8 @@ export class FormucontactoComponent implements OnInit {
   
   mensaje: FormGroup = this.form.group({
     to: ['crisblanco96@gmail.com'],
-    subject: [],
-    text : []  
+    subject: ['',[Validators.required, Validators.pattern('^[A-Za-z ]+$')]],
+    text : ['', [Validators.required, Validators.pattern('^[A-Za-z ]+$')] ] 
   })
 
 

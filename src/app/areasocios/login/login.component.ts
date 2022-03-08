@@ -35,8 +35,8 @@ export class LoginComponent implements OnInit {
     .subscribe({
         next: (resp => {
           
-          localStorage.setItem('token',resp.access_token!)
-          this.usuarioservice.getIdUsuario();
+          localStorage.setItem('token',resp.access_token!) //añadimos al localstorage el token que genera la peticion de login
+          this.usuarioservice.getIdUsuario(); //llamamos a este método para que cuando hagamos login nos guarde en el localstorage el email del usuario
           this.router.navigateByUrl('/areasocios/opciones');
           
       }),
