@@ -68,7 +68,7 @@ export class PedircitaComponent implements OnInit {
       ,
       error: resp => {
         console.log(resp);
-        Swal.fire('Error', resp.error.message, 'error');
+        Swal.fire('Error', resp.error.mensaje, 'error');
         
       }
     });

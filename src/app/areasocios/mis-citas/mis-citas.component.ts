@@ -20,11 +20,10 @@ export class MisCitasComponent implements OnInit {
     .subscribe({
       next: (resp => {
       this.citas = resp;
-      console.log(resp);
       
     }),
       error: resp => {
-        Swal.fire('Error', resp.error.message, 'error')
+        Swal.fire('Error', resp.error.mensaje, 'error')
         
       }
   });

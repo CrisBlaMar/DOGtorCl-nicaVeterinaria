@@ -48,11 +48,9 @@ export class RegistroComponent implements OnInit {
         })
       }),
       error : err => {
-        Swal.fire({
-          title: '¡ERROR!',
-          text: 'No ha podido registrarse',
-          icon: 'error'
-        })
+        Swal.fire(
+          'Error', err.error.mensaje , ('error')
+        )
         
       }
     });

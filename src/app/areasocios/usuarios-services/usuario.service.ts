@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClient,  HttpHeaders, HttpClientModule } from "@angular/common/http";
+import { HttpClient,  HttpHeaders } from "@angular/common/http";
 import { environment } from 'src/environments/environment';
 import { AuthResponse} from '../../interfaces/interfaces';
 import { Usuario } from 'src/app/interfaces/usuario.interfaces';
 import { Mascota } from '../../interfaces/mascota.interfaces';
 import { Observable} from 'rxjs';
-import { Cita, Citas } from 'src/app/interfaces/cita.interfaces';
+import {  Citas } from 'src/app/interfaces/cita.interfaces';
 
 @Injectable({
   providedIn: 'root'

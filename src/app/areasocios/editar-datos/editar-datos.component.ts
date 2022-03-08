@@ -34,7 +34,7 @@ export class EditarDatosComponent implements OnInit {
       })
       ,
       error: resp => {
-        Swal.fire('Error', resp.error.message, 'error')
+        Swal.fire('Error', resp.error.mensaje, 'error')
         
       }
     })
@@ -63,8 +63,8 @@ export class EditarDatosComponent implements OnInit {
       this.dni= resp.dni;
 
     }),
-      error: (resp: { error: { message: string | undefined; }; }) => {
-        Swal.fire('Error', resp.error.message, 'error')
+      error: (resp: { error: { mensaje: string | undefined; }; }) => {
+        Swal.fire('Error', resp.error.mensaje, 'error')
         
       }
   });

@@ -56,7 +56,7 @@ export class RegistromascotaComponent implements OnInit {
         })
       }),
       error : err => {
-        Swal.fire('Error', err.error.message, 'error')
+        Swal.fire('Error', err.error.mensaje, 'error')
         
       }
     });
