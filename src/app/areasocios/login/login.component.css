@@ -9,26 +9,26 @@
     padding-bottom: 10px;
     text-align: center;
     border-radius: 20px;
-    color: #5E5E34;
+    color: #253013;
     background-color: #FAE4CF;
     background-size: cover;
 
 }
 label{
-  color: #5E5E34;
+  color: #253013;
 }
 input{
     border-top: none;
     border-right: none;
     border-left: none;
     background-color: #FAE4CF;
-    border-color: #5E5E34;
+    border-color: #253013;
 }
 ::placeholder { 
-  color: #5E5E34; 
+  color: #253013; 
 }
 a{
-  color: #5E5E34;
+  color: #253013;
   letter-spacing: 3px;
   font-size: 20px;
 }
@@ -41,7 +41,7 @@ img{
 
 #logintexto{
     /**color: #c9892b;*/
-    color: #5e5e34;
+    color: #253013;
 }
 
 
@@ -51,7 +51,7 @@ img{
   font-size: 20px;
   letter-spacing: 4px;
   font-weight: 600;
-  color: #ffffff;
+  color: #253013;
   background: #CC9973;
   border: none;
   border-radius: 8px;
@@ -61,7 +61,11 @@ img{
 
   .button:hover{
     -webkit-transform:scale(1.1);transform:scale(1.1);
-    background-color: #5e5e34;
+    color: white;
+    background-color: #253013;
+  }
+  p{
+    color: #253013;
   }
 
 

@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { AbstractControl, AsyncValidator, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { UsuarioService } from '../../areasocios/usuarios-services/usuario.service';
 import { Usuario } from '../../interfaces/usuario.interfaces';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
-import { catchError, map, Observable, of } from 'rxjs';
+import {  EmailValidacionServices } from '../emailvali.service';
 
 @Component({
   selector: 'app-registro',
@@ -16,12 +14,13 @@ import { catchError, map, Observable, of } from 'rxjs';
 export class RegistroComponent implements OnInit {
 
   constructor(private usuarioservice : UsuarioService,
-    private form : FormBuilder, private router : Router, private httpclient: HttpClient ) { }
+    private form : FormBuilder, private router : Router, private emailservice : EmailValidacionServices ) { }
 
+    
   miFormulario: FormGroup = this.form.group({
     nombre: ['',[Validators.required, Validators.pattern('^[A-Za-z ]+$')]],
     apellidos: ['', [ Validators.required, Validators.pattern('([a-zA-Z]+) ([a-zA-Z]+)')]],
-    email: ['', [ Validators.required, Validators.pattern('^[^@]+@[^@]+\.[a-zA-Z]{2,}$')], [this.comprobarEmail]],
+    email: ['', [ Validators.required, Validators.pattern('^[^@]+@[^@]+\.[a-zA-Z]{2,}$')], [this.emailservice]],
     contrasenia: ['', [ Validators.required, Validators.minLength(6), Validators.maxLength(8)]],
     telefono: ['', [ Validators.required, Validators.pattern('^[0-9,$]*$') ] ],
     dni:['', [ Validators.required, Validators.pattern('[0-9]{8}[A-Za-z]{1}') ]]
@@ -63,29 +62,24 @@ export class RegistroComponent implements OnInit {
     this.miFormulario.reset();
   }
 
-  private baseUrl: string = environment.baseUrl;
-
-  comprobarEmail(email:string){
-    const url = `${this.baseUrl}/user/${email}`;
-    return this.httpclient.get<Usuario>(url);
+  campoNoValido( campo: string ) {
+    return this.miFormulario.get(campo)?.invalid && this.miFormulario.get(campo)?.touched;
   }
 
-  emailValidacion(abstract: AbstractControl): Observable <ValidationErrors | null> {
-    const email = abstract.value;
-    return this.comprobarEmail(email)
-    .pipe(
-      map (resp => {
-        if(resp.email != null){
-            return {enUso: true};
-        }else{
-          return null;
-        }
-      }),
-      catchError (err => {
-          return of(err);
-      })
-    );
+  get emailErrorMessage(): string {   
+    const errors = this.miFormulario.get('email')?.errors!;
+    if ( errors['required'] ) {
+      return 'Debe introducir un email';
+    } else if ( errors['pattern'] ) { 
+      return 'El email no tiene un formato correcto';
+    } else if ( errors['enUso'] ) {
+      return 'El email ya se encuentra registrado, pruebe con otro';
     }
+
+    return '';
+  }
+
+  
 
 
 }

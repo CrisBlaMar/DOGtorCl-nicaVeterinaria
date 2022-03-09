@@ -8,13 +8,13 @@
         <p>Rellena los siguientes campos</p>
         <form class="citaprevia" [formGroup]="citaPrevia" (ngSubmit)="realizarCita()" >
             <div class="form-group">
-                <label for="mascota" class="text-white"><i class="fa fa-paw" aria-hidden="true"></i> Selecciona tu mascota:</label><br><br>
+                <label for="mascota" class="text-white"><i class="fa fa-paw" aria-hidden="true"></i><p>Selecciona tu mascota:</p></label><br><br>
                 <select name="mascota" formControlName="mascota">
                     <option value={{pet.chip}} *ngFor="let pet of mascotas">{{pet.nombre}}</option> 
                 </select>
             </div><br>
             <div class="form-group">
-                <label for="fecha" class="text-white"><i class="fa fa-time"></i>Selecciona una fecha</label><br><br>
+                <label for="fecha" class="text-white"><i class="fa fa-time"></i><p>Selecciona una fecha</p> </label><br><br>
                 <input type="datetime-local" name="fecha" id="fecha" formControlName="fecha"/>
             </div><br>
             <div class="btn">
@@ -24,7 +24,7 @@
         
     </div>
     <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 divimg">
-        <img src="../../../assets/img/veterinariopng.png" alt="">
+        <img src="../../../assets/img/veterinariopng.png" alt="imagen de una veterinaria atentiendo a un cachorro de labrador">
     </div>
     
 </div>

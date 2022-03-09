@@ -10,9 +10,9 @@
         <span class="hamburguesa"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></span>
       </button>
       <div id="navbarNav">
-        <ul class="navbar-nav" data-bs-toggle="collapse">
-          <li  class="nav-item " routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-            <a  class="enlace " [routerLink]="['']"  ><i class="fa fa-home" aria-hidden="true"></i> INICIO</a>
+        <ul class="navbar-nav">
+          <li class="nav-item " routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <a class="enlace" [routerLink]="['']"  ><i class="fa fa-home" aria-hidden="true"></i> INICIO</a>
           </li>
           <li class="nav-item " routerLinkActive="active" >
             <a   class=" enlace " [routerLink]="['/servicios']"   ><i class="fa fa-list" aria-hidden="true"></i> SERVICIOS</a>
@@ -52,6 +52,14 @@
     </div>
   </nav>
 </header>
+
+
+
+
+
+
+
+
 
 <router-outlet></router-outlet>
 

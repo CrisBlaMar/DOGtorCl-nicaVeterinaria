@@ -3,7 +3,7 @@ img{
 }
 img:hover{
 	color: #5e5e34;
-	-webkit-transform:scale(1.1);transform:scale(1.1);
+	-webkit-transform:scale(1.05);transform:scale(1.05);
 }
 .enlaces{
     margin: auto;
@@ -14,6 +14,9 @@ img:hover{
 }
 p{
     font-family: cocogose;
+    font-size: 20px;
+    background-color: #e9bb97b6;
+    border-radius: 20px;
 }
 .footer {
     position:relative !important;
