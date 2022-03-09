@@ -3,11 +3,11 @@ body{
 }
 @font-face {
     font-family: cocogose;
-    src: url(../src/assets/fuentes/cocogose.ttf);
+    src: url(src/assets/fuentes/cocogose.ttf);
   }
   @font-face {
       font-family: lemonmilk;
-      src: url(../src/assets/fuentes/LEMONMILK-Light.otf);
+      src: url(src/assets/fuentes/LEMONMILK-Light.otf);
   }
 
 h1, h2{
