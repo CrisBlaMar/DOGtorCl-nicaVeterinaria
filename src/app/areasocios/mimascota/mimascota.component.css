@@ -32,7 +32,7 @@ button:hover{
     margin: auto;
     border-radius: 30px;
 }
-pre{
+.texto{
     font-size: 28px;
     font-family: cocogose;
 }
@@ -44,3 +44,9 @@ p{
     font-size: 16px;
 }
 
+@media screen and (min-width: 300px) and (max-width: 698px){
+
+    .nohaymascota{
+        width: 100%;
+    }
+}

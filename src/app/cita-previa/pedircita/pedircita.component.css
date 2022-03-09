@@ -66,3 +66,15 @@ h1{
 p, label, i{
   color:#253013;
 }
+
+@media screen and (min-width: 300px) and (max-width: 698px){
+
+  .formulariocita{
+      width: 100%;
+
+  }
+  img{
+    margin-top: 1%;
+    width: 100%;
+  }
+}

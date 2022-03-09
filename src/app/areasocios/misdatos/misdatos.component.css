@@ -34,3 +34,16 @@ td{
 .modal-content{
     background-color: #fae4cf;
 }
+
+@media screen and (min-width: 300px) and (max-width: 698px){
+
+    img{
+        width: 100%;
+    }
+    .datos{
+        width: 100%;
+    }
+    .modal-dialog{
+        width: 100%;
+    }
+}
