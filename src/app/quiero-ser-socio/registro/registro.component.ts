@@ -31,6 +31,7 @@ export class RegistroComponent implements OnInit {
    */
   hacerRegistro (){
     let usuario : Usuario = this.miFormulario.value;
+    if(this.miFormulario.valid){
     this.usuarioservice.registro(usuario)
     .subscribe({
       next: (resp => {
@@ -56,6 +57,7 @@ export class RegistroComponent implements OnInit {
         
       }
     });
+    }
   }
 
   ngOnInit(): void {
